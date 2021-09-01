@@ -1,0 +1,611 @@
+@charset "utf-8";
+
+
+/* base setting */
+body {
+	font-family: "游明朝 Medium", "YuMincho Medium", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #150404;
+}
+.font12px {
+	font-size: 12px;
+}
+.font16px {
+	font-size: 16px;
+}
+.font24px {
+	font-size: 24px;
+}
+.gothic {
+	font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+img{
+vertical-align: bottom;
+}
+
+/* nav */
+nav {
+	width:90%;
+	margin: 0 40px;
+	float: left;
+
+}
+nav ul {
+	width: 100%;
+	margin:0 auto;
+}
+nav ul li {
+	float: left;
+
+
+}
+nav ul li a {
+	display: block;
+	width: 80px;
+	height: 25px;
+	text-indent:-40000px; 
+	transition: all 1.5s;
+}
+
+nav ul li a:hover {
+	background-color: #5d7fc6;
+}
+nav ul li#nav_home a { background-image: url(../images/nav01_2.png); }
+nav ul li#nav_concept a { background-image: url(../images/nav02_2.png); }
+nav ul li#nav_menu a { background-image: url(../images/nav03_2.png); }
+nav ul li#nav_news a { background-image: url(../images/nav04_2.png); }
+nav ul li#nav_gallery a { background-image: url(../images/nav05_2.png); }
+
+
+nav ul li.white a {
+	background-color: #ffffff;
+}
+
+/* ナビ固定↓ */
+.fixed {
+    position: fixed;
+    top: 0;
+		left:0;
+		width: 100%;
+    z-index: 10000;
+		background-color: #d0dde3;
+}
+
+
+/* TOPへ戻る */
+#pagetop2 {
+	float : right;
+	padding: 40px 0;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+
+
+
+/* footer */
+footer {
+	clear: both;
+	background-image:url(../images/footer_flower.png),url(../images/footer_tile.png) ;
+	background-repeat: no-repeat,repeat;
+	background-position: center top,bottom;
+	padding-top:38px;
+	padding-left: 20px;
+}
+#footerbox {
+	width:100%;
+	margin: 0 auto;
+}
+
+footer #leftbox {
+	float: left;
+	background-color:rgba( 255,255,255,0.5);
+	margin : 20px 0;	
+	padding: 10px 15px;
+	margin-top: 10px;
+}
+footer #tel{
+	margin-top: 10px;
+}
+
+footer #rightbox {
+	clear: both;
+	float:none;
+	margin-top: 20px;
+	text-align: left;
+	font-size: 9px;
+}
+footer #caution{
+	margin-bottom: 10px;
+}
+
+
+/* clearfix */
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+/* 全共通 */
+h1 img {
+	width: 100%;
+	max-width: 1300px;
+	display: block;
+	margin: 0 auto;
+}
+/* home */
+.sample {
+	width: 100%;
+	max-width: 1300px;
+	display: block;
+	margin: 0 auto;
+
+}
+
+
+#container {
+	width: 100%;
+	margin-bottom: 100px;
+
+}
+
+#container #topheading2 #h2 {
+	font-size: 30px;
+	display: block;
+	text-align: center;
+	width:70%;
+	border-bottom: solid 2px #356c77;
+	margin:75px auto 50px;
+
+}
+#container h2 img {
+	display: none;
+}
+
+#container #intro {
+	width: 70%;
+	display:block;
+	margin: 0 auto 30px;
+
+}
+#container #intro #more {
+	float: right;
+	padding-top:	30px;
+}
+#container #intro #more a:hover {
+	opacity: 0.5;
+}
+
+#container #intro #more:hover {
+	-webkit-transform: translate(3px,3px);
+		-moz-transform: translate(3px,3px);
+		-ms-transform: translate(3px,3px);
+		-o-transform: translate(3px,3px);
+		transform: translate(3px,3px);
+
+}
+.banner {
+	width: 100%;
+	margin: 0 auto;
+	padding-left:40px;
+}
+
+.banner li {
+	float: left;
+	
+	margin:0 7px 14px 7px;
+}
+.banner li a:hover {
+	opacity: 0.7;
+}
+#news {
+	width: 420px;
+	height: 200px;
+	background-image: url(../../images/01_news_side.png);
+	background-repeat:no-repeat;
+	background-position: center;
+	border: solid 2px #88aeb3;
+	float: left;
+	margin:0 7px 14px 7px;
+
+}
+#news .head{
+	margin :12px 0 0 70px;
+}
+#news .icon {
+	float:left;
+	margin:10px 25px 10px 60px;
+}
+
+#news dl {
+	padding :10px 50px 15px 30px;
+}
+#news dt{
+	font-weight: bold;
+}
+#news dt a {
+	color:#150404;
+}
+/*コンセプト～ギャラリー共通*/
+#container2 {
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 100px;
+
+}
+
+
+/*コンセプト*/
+#container2 #heading2 {
+	font-size: 30px;
+	display:block;
+	text-align: center;
+	width:70%;
+	border-bottom:solid 2px #356c77;
+	margin:80px auto 50px;
+}
+#container2 #intro2 {
+	width: 70%;
+	display:block;
+	margin:0 auto 80px;
+}
+#container2 #introspection ul {
+	width:70%;
+	margin: 0 auto;
+}
+#container2 #introspection ul li {
+	float: left;
+	margin : 0 20px 80px 20px;
+}
+#container2 #introspection ul li:hover {
+	-webkit-transform: translate(3px,3px);
+		-moz-transform: translate(3px,3px);
+		-ms-transform: translate(3px,3px);
+		-o-transform: translate(3px,3px);
+		transform: translate(3px,3px);
+	opacity:0.7;
+}
+
+#container2 #information h3 {
+	clear: both;
+	font-size :24px;
+	display:block;
+	text-align: center;
+	width:70%;
+	border-bottom:solid 1px #356c77;
+	margin:0 auto 30px;
+}
+#container2 #information p img{
+	display:block;
+	width: 100%;
+	max-width: 917px;
+	margin : 35px auto 60px;
+}
+#container2 #map {
+	float: none;
+	max-width: 440px;
+
+	margin :60px 0px 20px 0px;	
+
+}
+#container2 #illust {
+	width:100%;
+}
+
+
+#container2 #map {
+
+	margin :0 auto 40px;	
+}
+#container2 #googlemap {
+	margin-top:5px;
+	float:none;
+}
+#container2 #googlemap a:hover {
+	opacity: 0.7;
+}
+
+#container2 #info {
+	margin: 0;
+	clear: both;
+	float: none;
+	width:100%;
+	padding-top: 10px;
+	margin-top: 40px;
+	background-image: none;
+}
+#container2 #info table {
+	margin: 10px auto 40px;
+	border-collapse: collapse;
+
+}
+#container2 #info table td{
+	border: solid 1px #356c77;
+	padding-left:10px;
+}
+#container2 #info table .item{
+	padding-right: 20px;
+
+}
+/*メニュー*/
+#lineheight {
+	line-height: 1.7;
+}
+#container2 #heading2-2 {
+	font-size: 30px;
+	display:block;
+	text-align: center;
+	width:70%;
+	margin:80px auto 50px;
+	padding-top:40px;
+	background-image: url(../../images/03_h2_flame.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+#container2 #limited {
+	width: 100%;
+}
+
+#container2 #limited img {
+	width: 100%;
+	max-width:630px;
+	display:block;
+	margin:0 auto;
+	padding-bottom :0px;
+}
+#container2 #iconset {
+	width: 270px;
+	margin: 30px auto 50px;
+}
+#container2 #iconset li {
+	float: left;
+	margin: 0px 10px 0 10px;
+}
+#container2 #lunchset {
+		display: block;
+		width: 80%;
+	margin: 0 auto;
+	border: solid 2px #356c77;
+	margin-bottom: 70px;
+}
+
+#container2 #lunchset #lunch_left {
+	margin: 15px auto 10px;
+}
+#container2 #lunchset #lunch_left figcaption {
+	line-height: 1.8;
+	text-align: center;
+}
+#container2 #lunchset #lunch_left img {
+	display: block;
+	width: 90%;
+	max-width: 330px;
+	margin: 0 auto;
+
+}
+#container2 #lunchset h3 {
+	font-size : 26px;
+	padding-left: 60px;
+	margin-left: 10px;
+	margin-bottom: 25px;
+	background-image: url(../../images/03_flowermark.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	}
+#container2 #lunchset #lunch_right {
+	width: 80%;
+	margin: 30px auto;
+
+}
+#container2 #lunchset #lunch_right dt ,.font24px {
+	font-size: 24px;
+}
+#container2 #lunchset #lunch_right #price {
+	float: right;
+}
+#container2 #lunchset #lunch_right dl {
+	margin :30px 0;
+	line-height: 2;
+}
+
+#menu {
+	margin-left: 40px;	
+}
+
+#container2 #menu #food h3 {
+	clear: both;
+	font-size: 30px;
+	padding-left:60px;
+	background-image: url(../../images/03_mark1.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-bottom: 30px;
+}
+#container2 #menu ul .menu_left {
+	float: left;
+	margin: 0 15px 40px;
+}
+#container2 #menu ul .menu_right {
+	float: left;
+	margin: 0 15px 40px;
+}
+
+#container2 #menu ul li figure {
+	float: left;
+	margin-right: 10px;
+}
+#container2 #menu ul li figcaption{
+	line-height: 1.8;
+}
+
+
+#container2 #menu ul li dl {
+	float: right;
+}
+#container2 #menu ul li dl dt {
+	margin-bottom: 45px;
+}
+#container2 #menu ul li .menu_price {
+	text-align: right;
+}
+#container2 #menu .jump ul{
+	clear: both;
+	float: right;
+	margin:0 0 60px 0;
+}
+#container2 #menu .jump ul li{
+	float:left;
+}
+
+#container2 #menu .jump ul li:hover,#container2 #iconset ul li:hover {
+	-webkit-transform: translate(2px,2px);
+		-moz-transform: translate(2px,2px);
+		-ms-transform: translate(2px,2px);
+		-o-transform: translate(2px,2px);
+		transform: translate(2px,2px);
+	opacity:0.7;
+}
+
+
+
+
+
+
+#container2 #menu #sweets h3 {
+	font-size: 30px;
+	padding-left:60px;
+	background-image: url(../../images/03_mark2.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-bottom: 30px;
+}
+#container2 #menu #drink h3 {
+	font-size: 30px;
+	padding-left:60px;
+	background-image: url(../../images/03_mark2.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-bottom: 30px;
+}
+
+
+/*ニュース*/
+#container2 #blog {
+	width: 70%;
+	float: none;
+}
+#container2 #blog .dairy {
+	padding-top: 60px;
+}
+#container2 #blog .dairy h3 {
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 60px;
+	margin:0 0 0 40px;
+	background-image: url(../../images/04_flower.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	border-bottom: solid 2px #356c77;
+	padding-top: 20px;
+	clear: both;
+}
+#container2 #blog .dairy h3 .date {
+	font-size: 16px;
+	font-weight: normal;
+	float: right;
+	padding-top: 10px;
+}
+#container2 #blog dl{
+	margin: 30px 0 80px 40px;
+}
+#container2 #blog dt{
+	float: left;
+	margin-right: 20px;
+}
+#container2 #blog dd{
+	float: left;
+}
+
+#container2 #archive {
+	clear: both;
+	float: left;
+	margin:80px 0 0 40px;
+}
+#container2 #archive dt {
+	font-weight: bold;
+	border-bottom: solid 1px #356c77;
+	margin-bottom: 20px;
+}
+#container2 #archive dd a{
+	color: #150404;
+}
+
+/*ギャラリー*/
+#container2 #heading5 {
+	font-size: 30px;
+	display:block;
+	text-align: center;
+	width:70%;
+	border-bottom:solid 2px #356c77;
+	margin:80px auto 50px;
+}
+#container2 #intro5 {
+	width: 70%;
+	display:block;
+	margin:0 auto 80px;
+}
+#container2 #recruitment h3 {
+	font-size :24px;
+	display:block;
+	text-align: center;
+	width:70%;
+	border-bottom:solid 1px #356c77;
+	margin:0 auto 30px;
+}
+#container2 #recruitment {
+	width: 70%;
+	display:block;
+	margin:0 auto 80px;
+}
+#container2 #contact {
+	width: 333px;
+	margin: 0 auto 80px;
+	background-image: url(../../images/05_ornament1.png),url(../../images/05_ornament2.png);
+	background-repeat: no-repeat;
+	background-position: top center,bottom center;
+	padding: 40px 0 80px;
+}
+#container2 #contact h4 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+#container2 #contact {
+	width: 100%;
+}
+
+
+#container2 #contact dl {
+	width: 250px;
+	display: block;
+	margin: 0 auto;
+}
+#container2 #contact dt {
+	float: left;
+	margin-right: 20px;
+}
+#container2 #photo img.mini {
+	display: block;
+	width: 100%;
+	max-width: 470px;
+	margin:0 auto;
+}
+#container2 #photo img.normal {
+	display: none;
+}
+
+

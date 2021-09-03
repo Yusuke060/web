@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+
+<title>WAScafe（ワズカフェ）</title>
+<link rel="stylesheet" href="common/css/reset.css">
+<link rel="stylesheet" media="(min-width: 899px)" href="common/css/style.css" />
+<link rel="stylesheet" media="(max-width: 900px)" href="common/css/style2.css" />
+
+<!--ナビとTOPへ-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="common/js/script.js"></script>
+
+<!--スライドショー-->
+<link rel="stylesheet" href="slick/slick.css">
+<link rel="stylesheet" href="slick/slick-theme.css">
+<script src="slick/slick.min.js"></script>
+
+
+
+</head>
+
+<body>
+<header id="atama" class="clearfix">
+<h1 class="sample">
+<img class="active" src="images/01_photo1.png" alt="ワズカフェニューオープン">
+<img src="images/01_photo2.png" alt="ワズカフェニューオープン">
+<img src="images/01_photo3.png" alt="ワズカフェニューオープン">
+</h1>
+
+<div id="navfix">
+<nav>
+		<ul id="globalNavi" class="clearfix">
+			<li id="nav_home"><a href="index.html">ホーム</a></li>
+			<li id="nav_concept"><a href="concept.html">コンセプト</a></li>
+			<li id="nav_menu"><a href="menu.html">メニュー</a></li>
+			<li id="nav_news"><a href="news.html">お知らせ</a></li>
+			<li id="nav_gallery"><a href="gallery.html">ギャラリー</a></li>
+		</ul>
+</nav>
+</div><!--nav-->
+</header>
+
+<script>
+$(function(){
+$('.sample').slick({
+autoplay:true,
+autoplaySpeed:5000,
+arrows: false,
+dots:true,
+pauseOnHover:false,
+fade:true
+});
+}); 
+</script>
+
+
+
+
+
+
+
+<div id="container" class="clearfix">
+
+<h2 id="topheading2"><img src="images/01_open.png" alt="2018年4月1日オープン"><span id="h2">町の小さなギャラリーでおいしいお茶を</span></h2>
+<div id="intro" class="clearfix">
+	<p>ワズカフェは2018年４月１日、名古屋市の植田駅から徒歩１００００分、静かな住宅街にある白い洋館に新しくオープンします。店内にはたくさんの素敵な絵や写真などが飾られています。おいしい食事をしながらお気に入りの一枚を探してみてください。<br>
+ご友人と、ご家族と、おひとりでゆっくりと過ごしていただける雰囲気のカフェです。
+スタッフ一同、皆様のご来店をお待ちしております。</p>
+	<p id="more"><a href="concept.html"><img src="images/01_more.png" alt="もっと見る"></a></p>
+
+</div><!--intro-->
+
+<div id="bannerset" class="clearfix">
+	<ul class="banner">
+		<li><a href="concept.html#information"><img src="images/01_banner01.png" alt="アクセス"></a></li>
+		<li><a href="menu.html#lunchset"><img src="images/01_banner02.png" alt="ランチ"></a></li>
+		<li><a href="menu.html#drink"><img src="images/01_banner03.png" alt="ドリンク"></a></li>
+		<li><a href="gallery.html"><img src="images/01_banner04.png" alt="ギャラリー"></a></li>
+	</ul>
+	<ul class="banner">
+		<li id="news" class="font12px gothic"><p><a href="news.html"><img class="head" src="images/01_news.png" alt="ニュース"></a></p>
+		<p class="icon"><img src="images/01_new_img01.png" alt="桜紅茶"></p>
+		<dl>
+			<dt><a href="news.html#d180313">2017.03.13</a></dt>
+				<dd>４月の期間限定ドリンク「桜紅茶」。春の風味をお届けします。</dd>
+		</dl>
+		<p class="icon"><img src="images/01_new_img02.png" alt="ワズカフェ"></p>
+		<dl>
+			<dt><a href="news.html#d180310">2017.03.10</a></dt>
+				<dd>WEBサイトがオープンしました。</dd>
+		</dl>
+		</li>
+		<li><a href="menu.html#heading2-2"><img src="images/01_banner05.png" alt="期間限定"></a></li>
+		<li><a href="gallery.html#recruitment"><img src="images/01_banner06.png" alt="展示作品募集"></a></li>
+	</ul>
+</div><!--bannerset-->
+
+</div><!--container-->
+
+<div id="pagetop">
+	<p id="pagetop2"><a href="#atama"><img src="common/images/footer_return.png" alt="トップへ"></a></p>
+</div><!--pagetop-->
+
+
+<footer class="clearfix">
+<div id="footerbox">
+	<div id="leftbox">
+	<p>WAScafe(ワズカフェ）</p>
+	<p class="font12px gothic">〒468-0007　愛知県名古屋市天白区植田本町1-607</p>
+		<div id="tel" class="gothic">
+		<p class="font12px">TEL / 000-123-4567
+		<p class="font12px">mail / wascafe1804xx@gmail.com</p>
+		</div><!--tel-->
+	</div><!--leftbox-->
+	<div id="rightbox">
+	<p id="caution" class="gothic">このサイトは架空のサイトになります。このページで使用している写真は全てサンプルです。</p>
+	<p class="gothic">Copyright &copy; WAS cafe. All Rights Reserved.</p>
+	</div><!--rightbox-->
+</div><!--footerbox-->
+</footer>
+
+</body>
+</html>

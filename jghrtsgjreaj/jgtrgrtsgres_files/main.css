@@ -1,0 +1,247 @@
+html{
+	font-size: 10px;
+}
+
+body{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size: 1.6rem;
+	font-family: 'Hiragino Kaku Gothic ProN',メイリオ,"ＭＳ ゴシック",sans-serif;
+}
+h2{
+	color: rgb(50,50,225);
+	font-size: 2.4rem;
+	border-bottom: solid 4px rgb(255, 95, 0);
+}
+h3{
+	color: rgb(25, 25, 25);
+	border-left: 8px solid rgb(255, 95, 0);
+	padding: 8px;
+	background-color: rgba(0,136,0,0.2);
+	font-size: 2.0rem;
+}
+h4{
+	font-size: 1.6rem;
+}
+
+select{
+	height: 24px;
+	border-radius: 8px;
+	background-color: rgb(240,240,200);
+	font-size: 1.4rem;
+}
+button{
+	border-radius: 6px;
+	background-color: rgb(200,225,255);
+    border-style: solid;
+    border-color: rgb(25,25,25);
+    border-width: 1px;
+
+}
+#full {
+	width: 1200px;
+	margin:0 auto;
+	margin-top: 0px;
+	font-size: 1.6rem;
+	background-color: rgba(204,204,153,0.5);
+}
+
+.timebar {
+	width: 100%;
+	background-color: rgba(204,204,153,0.5);
+	position: fixed;
+	font-size: 2.2rem;
+	font-weight: bold; 
+	height: 24px;
+	opacity: 0.5;
+}
+
+#unitbrock {
+	position:relative;
+	margin-right: auto;
+	margin-left: auto;
+	width :1000px;
+}
+#rightimage{
+	float:right;
+	margin-left:10px;
+	font-size:1.4rem;
+	text-align:center;
+}
+
+/*アコーディオンメニューここから*/
+.accbox {
+    padding: 0;
+}
+/*チェックは隠す*/
+.accbox input {
+    display: none;
+}
+/*中身を非表示にしておく*/
+.accbox .accshow {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.cssacc:checked + .accshow {
+    height: auto;
+    opacity: 1;
+}
+/*アコーディオンメニューここまで*/
+
+#modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+background-color: white;
+width: 800px;
+margin: auto;
+}
+
+#page_top{
+width: 160px;
+height: 56px;
+position: fixed;
+left: 5vw;
+bottom: 10px;
+background: #007ab5;
+opacity: 0.6;
+}
+#page_top a{
+position: relative;
+display: block;
+width: 160px;
+height: 56px;
+text-decoration: none;
+}
+
+#page_top a::after{
+content: 'トップへ戻る';
+font-size: 22px;
+font-weight: bold;
+color: #fff;
+position: absolute;
+top: 10px;
+bottom: 0;
+right: 0;
+left: 0;
+margin: auto;
+text-align: center;
+}
+
+#sns_share{
+width: 176px;
+height: 80px;
+position: fixed;
+right: 5vw;
+bottom: 10px;
+background: rgba(204,204,153,0.5);
+opacity: 0.6;
+	border-radius: 8px;
+    border-style: solid;
+    border-color: rgb(25,25,25);
+    border-width: 1px;
+}
+
+#share_box{
+position: absolute;
+display: block;
+margin: 6px;
+}
+
+/* モーダルCSSここから */
+
+.modal-wrapper {
+ z-index: 999;
+ position: fixed;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ padding: 60px 10px;
+ text-align: center;
+}
+
+.modal-wrapper:not(:target) {
+ opacity: 0;
+ visibility: hidden;
+ transition: opacity .3s, visibility .3s;
+}
+
+.modal-wrapper:target {
+ opacity: 1;
+ visibility: visible;
+ transition: opacity .4s, visibility .4s;
+}
+
+.modal-wrapper::after {
+ display: inline-block;
+ height: 100%;
+ margin-left: -.05em;
+ vertical-align: middle;
+ content: "";
+}
+
+.modal-wrapper .modal-window {
+ box-sizing: border-box;
+ display: inline-block;
+ z-index: 20;
+ position: relative;
+ width: 70%
+ max-width: 600px;
+ padding: 30px 30px 15px;
+ border-radius: 2px;
+ background: #fff;
+ box-shadow: 0 0 30px rgba(0,0,0, .6);
+ vertical-align: middle;
+}
+
+.modal-wrapper .modal-window .modal-content {
+ max-height: 80vh;
+ overflow-y: auto;
+ text-align: center;
+}
+
+.modal-overlay {
+ z-index: 10;
+ position: absolute;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background: rgba(0,0,0, .8);
+}
+.madal-wrapper .modal-close {
+ z-index: 20;
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 35px;
+ color: #95979c !important;
+ font-size: 20px;
+ font-weight: 700;
+ line-height: 35px;
+ text-align: center;
+ text-decoration: none;
+ text-indent: 0;
+}
+
+.modal-wrapper .modal-close:hover {
+ color: #2b2e38 !important;
+ text-align: center;
+}

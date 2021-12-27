@@ -1,0 +1,2722 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--iOS用PWA対応ここから-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="大船シミュ(試)">
+<link rel="apple-touch-icon" href="https://udonsimulator.web.fc2.com/simulator/ofuna/icons/ios/icon192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://udonsimulator.web.fc2.com/simulator/ofuna/icons/ios/icon512.png" sizes="512x512">
+<!--iOS用PWA対応ここまで-->
+<!--Twitterカード設定-->
+<meta name="twitter:card" content="summary_large_image"> <!--①-->
+<meta property="twitter:url" content="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm"> <!--③-->
+<meta property="twitter:title" content="おうちで大船駅"> <!--④-->
+<meta property="twitter:description" content="大船駅発車標シミュレータ"> <!--⑤-->
+<meta property="twitter:image" content="https://udonsimulator.web.fc2.com/simulator/ofuna/img/twcard.jpg"> <!--⑥-->
+<!--Twitterカード設定-->
+
+<title>おうちで大船駅</title>
+<script src="./jgtrgrtsgres_files/smoothScroll.js" type="text/javascript"></script>
+<script src="./jgtrgrtsgres_files/version.js" type="text/javascript"></script><!--バージョン判定用-->
+<script src="./jgtrgrtsgres_files/main.js" type="text/javascript"></script><!--本体-->
+<script src="./jgtrgrtsgres_files/random.js" type="text/javascript"></script><!--ランダムセット-->
+<script src="./jgtrgrtsgres_files/jre-ofuna20200314w.js" type="text/javascript"></script><!--大船駅時刻表DB平日（2020年3月14日改正）-->
+<script src="./jgtrgrtsgres_files/jre-ofuna20200314h.js" type="text/javascript"></script><!--大船駅時刻表DB休日（2020年3月14日改正）-->
+<script src="./jgtrgrtsgres_files/japanese-holidays.min.js"></script><!--休日判定-->
+
+<!--PWA関連ここから-->
+<!-- ウェブアプリマニフェストの読み込み -->
+<link rel="manifest" href="https://udonsimulator.web.fc2.com/simulator/ofuna/manifest.json">
+<!-- ServiceWorkerの登録 -->
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then((reg) => {
+        console.log('Service worker registered.', reg);
+      });
+}
+<!--PWAバージョン判定ここから-->
+var nowversionA = "1.0.0.8";
+if(nowversionA==nowversionB){
+	console.log('最新バージョンです。現在のバージョンは ' + nowversionB + ' です。');
+}else{
+	var resultpop = confirm('最新バージョン ' + nowversionB + ' が公開されています。更新しますか？');
+ 
+if( resultpop ) {
+ 
+    window.location.reload(true);
+ 
+}else {
+ 
+    alert("プログラムは動作しますが正常な挙動をしない場合があります。その場合はページをリロードしてください。");
+ 
+}
+}
+<!--PWAバージョン判定ここまで-->
+
+</script>
+<!--PWA関連ここまで-->
+
+<script>
+var ua = window.navigator.userAgent.toLowerCase();
+
+if(ua.indexOf("windows nt") !== -1) {
+  console.log("「Microsoft Windows」をお使いですね!");
+} else if(ua.indexOf("android") !== -1) {
+  console.log("「Android」をお使いですね!");
+} else if(ua.indexOf("iphone") !== -1 || ua.indexOf("ipad") !== -1) {
+  console.log("「iOS」をお使いですね!");
+} else if(ua.indexOf("mac os x") !== -1) {
+  console.log("「macOS」をお使いですね!");
+} else {
+  console.log("何をお使いなのですか?");
+}
+</script>
+<script>window.onload = mcset;</script><!--モード判定呼び出し-->
+<script>window.addEventListener('load',weho);</script><!--休日判定呼び出し-->
+<script>window.addEventListener('load',autotab);</script><!--タブ判定呼び出し-->
+<script>window.addEventListener('load',pushset);</script><!--通知判定呼び出し-->
+<!--ここから不要構文につき近日削除-->
+<script>
+var count = 0;
+var Int1;
+Int1 = setInterval(countup,1000);
+var Int2;
+Int2 = setInterval(clock,500);
+
+</script>
+<!--近日削除ここまで-->
+
+<!--スタイルシートここから-->
+<link rel="stylesheet" href="./jgtrgrtsgres_files/main.css">
+<!--スタイルシートここまで-->
+<style type="text/css">:root topadblock, :root span[id^="ezoic-pub-ad-placeholder-"], :root img[alt^="Fuckbook"], :root iframe[src*="mellowads.com"], :root div[style^="padding: 5px 15px !important"] > [style^="width: 100% !important; cursor: pointer !important;"], :root div[id^="zergnet-widget"], :root div[id^="traffective-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="rc-widget-"], :root div[id^="q1-adset-"], :root div[id^="proadszone-"], :root div[id^="lazyad-"], :root div[id^="gtm-ad-"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dmRosAdWrapper"], :root div[id^="div-adtech-ad-"], :root div[id^="dfp-slot-"], :root div[id^="dfp-ad-"], :root div[id^="code_ads_"], :root div[id^="block-views-topheader-ad-block-"], :root div[id^="banner-ad-"], :root div[id^="advt-"], :root div[id^="advads_"], :root div[id^="adspot-"], :root div[id^="ads300_600-widget"], :root div[id^="ads300_250-widget"], :root div[id^="ads300_100-widget"], :root div[id^="ads120_600-widget"], :root div[id^="adrotate_widgets-"], :root div[id^="adngin-"], :root div[id^="adfox_"], :root div[id^="ad_script_"], :root div[id^="ad_rect_"], :root div[id^="ad_position_"], :root div[id^="ad-server-"], :root div[id^="ad-inserter-"], :root div[id^="ad-cid-"], :root div[id^="acm-ad-tag-"], :root div[id^="YFBMSN"], :root div[id^="ADV-SLOT-"], :root div[data-test-id="AdDisplayWrapper"], :root div[data-spotim-slot], :root div[data-role="sidebarAd"], :root div[data-native_ad], :root div[data-mediatype="advertising"], :root div[data-id-advertdfpconf], :root div[data-content="Advertisement"], :root div[data-adunit], :root div[data-adunit-path], :root div[data-adservice-param-tagid="contentad"], :root div[data-adname], :root div[data-ad-wrapper], :root div[data-ad-underplayer], :root div[data-ad-placeholder], :root div[class^="zn-sponsored-outbrain-"], :root div[class^="sp-adslot-"], :root div[class^="proadszone-"], :root div[class^="pane-google-admanager-"], :root div[class^="native-ad-"], :root div[class^="lifeOnwerAd"], :root div[class^="largeRectangleAd_"], :root div[class^="kiwiad-popup"], :root div[class^="kiwiad-desktop"], :root div[class^="index_adBeforeContent_"], :root div[class^="index_adAfterContent_"], :root div[class^="index__adWrapper"], :root div[class^="block-openx-"], :root div[class^="backfill-taboola-home-slot-"], :root div[class^="articleAdUnitMPU_"], :root div[class^="advertisement-desktop"], :root div[class^="adsbutt_wrapper_"], :root div[class^="ads-partner-"], :root div[class^="adbanner_"], :root div[class^="ad_position_"], :root div[class^="SponsoredAds"], :root div[class^="ResponsiveAd-"], :root div[class^="PreAd_"], :root div[class^="Display_displayAd"], :root div[class^="Directory__footerAds"], :root div[class^="BannerAd_"], :root div[class^="AdhesionAd_"], :root div[class^="Ad__bigBox"], :root div[class^="Ad__adContainer"], :root div[class^="AdSlot__container"], :root div[id^="divAdvAD_"], :root div[class^="ad_border_"], :root div[class^="AdItem-"], :root div[class^="AdEmbeded__AddWrapper"], :root span[data-component-type="s-ads-metrics"], :root div[class^="AdBannerWrapper-"], :root div[class*="_AdInArticle_"], :root div[class*="-storyBodyAd-"], :root div[data-subscript="Advertising"], :root div[class$="dealnews"] > .dealnews, :root div > [class][onclick*=".updateAnalyticsEvents"], :root display-ads, :root display-ad-component, :root bottomadblock, :root aside[id^="tn_ads_widget-"], :root aside[id^="adrotate_widgets-"], :root amp-embed[type="taboola"], :root amp-ad-custom, :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root a[target="_blank"][href^="http://api.taboola.com/"], :root div[class^="BlockAdvert-"], :root a[src^="https://www.utherverse.com/net/"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="https://zononi.com/"], :root a[href^="https://www.what-sexdating.com/"], :root a[href^="https://www.vewwrmp.com/"], :root a[href^="https://www.spyoff.com/"], :root a[href^="https://www.sheetmusicplus.com/?aff_id="], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="https://www.share-online.biz/affiliate/"], :root a[href^="https://www.securegfm.com/"], :root a[href^="https://www.rabbits.webcam/?id="], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://www.porngamesxxx.com/"][href*="?campaign="], :root a[href^="https://www.passeura.com/"], :root div[id^="amzn-assoc-ad"], :root a[href^="https://www.oboom.com/ref/"], :root div[itemtype="http://schema.org/WPAdBlock"], :root a[href^="https://www.nudeidols.com/cams/"], :root a[href^="https://www.mypornstarcams.com/landing/click/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://www.kingsoffetish.com/tour?partner_id="], :root div[data-adzone], :root a[href^="https://www.iyalc.com/"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://www.gambling-affiliation.com/cpc/"], :root a[href^="https://www.dollps.com/?track="], :root a[href^="https://www.clicktraceclick.com/"], :root a[href^="https://www.camsoda.com/enter.php?id="], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://www.bebi.com"], :root div[class^="pane-adsense-managed-"], :root a[href^="https://www.bang.com/?aff="], :root a[href^="https://www.awin1.com/cread.php?awinaffid="], :root a[href^="https://weedzy.co.uk/"][href*="&utm_"], :root a[href^="https://vod09197d7.club/"], :root a[href^="https://vo2.qrlsx.com/"], :root a[href^="https://vlnk.me/"], :root a[href^="https://unreshiramor.com/"], :root a[href^="https://uncensored.game/"], :root a[href^="https://ttf.trmobc.com/"], :root a[href^="https://trusted-click-host.com/"], :root a[href^="https://trf.bannerator.com/"], :root a[href^="http://go.247traffic.com/"], :root a[href^="https://bestcond1tions.com/"], :root a[href^="https://trappist-1d.com/"], :root a[href^="https://tracking.truthfinder.com/?a="], :root a[href^="https://tracking.gitads.io/"], :root a[href^="https://go.xxxjmp.com/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.interactivegf.com/"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://track.healthtrader.com/"], :root a[href^="https://track.clickmoi.xyz/"], :root a[href^="https://control.trafficfabrik.com/"], :root a[href^="https://track.52zxzh.com/"], :root a[href^="https://axdsz.pro/"], :root a[href^="https://tour.mrskin.com/"], :root a[href^="http://www.greenmangaming.com/?tap_a="], :root a[href^="https://tm-offers.gamingadult.com/"], :root a[href^="https://t.hrtyj.com/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://squren.com/rotator/?atomid="], :root a[href^="http://cdn3.adexprts.com/"], :root a[href^="https://spygasm.com/track?"], :root div[id^="ad-div-"], :root a[href^="https://secure.eveonline.com/ft/?aid="], :root a[href^="https://secure.bstlnk.com/"], :root div[class^="kiwi-ad-wrapper"], :root a[href^="https://rev.adsession.com/"], :root [href*=".trackmstr.com"], :root a[href^="https://refpasrasw.world/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root a[href^="https://refpaexhil.top/"], :root a[href^="https://reachtrgt.com/"], :root AD-SLOT, :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="http://www.my-dirty-hobby.com/?sub="], :root a[href^="https://porndeals.com/?track="], :root a[href^="//go.onclasrv.com/"], :root a[href^="https://pcm.bannerator.com/"], :root a[href^="https://offerforge.net/"], :root a[href^="https://ndt5.net/"], :root div[id^="ad_head_celtra_"], :root a[href^="https://wittered-mainging.com/"], :root a[href^="https://t.grtyi.com/"], :root a[href^="https://myusenet.xyz/"], :root a[href^="https://my-movie.club/"], :root [href^="https://detachedbates.com/"], :root a[href^="https://mk-cdn.net/"], :root a[href^="https://mk-ads.com/"], :root a[href^="https://meet-sex-here.com/?u="], :root a[href^="https://medleyads.com/"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root iframe[src^="https://tpc.googlesyndication.com/"], :root a[href*=".approvallamp.club/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://landing1.brazzersnetwork.com"], :root a[href^="http://adrunnr.com/"], :root a[href^="https://landing.brazzersplus.com/"], :root a[href^="https://land.rk.com/landing/"], :root a[href^="http://ad.au.doubleclick.net/"], :root a[href^="https://k2s.cc/pr/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://join.virtuallust3d.com/"], :root a[href^="http://www.uniblue.com/cm/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://track.effiliation.com/servlet/effi.redir?"], :root a[href^="https://iqoption.com/lp/mobile-partner/"][href*="?aff="], :root [href^="http://join.shemalepornstar.com/"], :root a[href^="https://incisivetrk.cvtr.io/click?"], :root a[href^="https://iactrivago.ampxdirect.com/"], :root [href*="https://www.jmbullion.com/gold/"], :root a[href^="https://iac.ampxdirect.com/"], :root a[href^="https://horny-pussies.com/tds"], :root a[href^="https://graizoah.com/"], :root a[href^="http://feedads.g.doubleclick.net/"], :root a[href^="https://redsittalvetoft.pro/"], :root a[href^="https://googleads.g.doubleclick.net/pcs/click"], :root a[href^="http://cdn.adstract.com/"], :root a[href^="https://gogoman.me/"], :root a[href^="https://go.xtbaffiliates.com/"], :root a[href^="https://torrentsafeguard.com/?aid="], :root a[href^="https://offers.refchamp.com/"], :root a[href^="https://go.trkclick2.com/"], :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://go.stripchat.com/"][href*="&campaignId="], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://go.julrdr.com/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://go.hpyjmp.com/"], :root a[href^="https://go.goasrv.com/"], :root a[href^="https://adnetwrk.com/"], :root a[href^="https://go.gldrdr.com/"], :root a[href^="https://fleshlight.sjv.io/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.currency.com/"], :root a[href^="https://track.afftck.com/"], :root a[href^="http://guideways.info/"], :root a[href^="https://go.cmrdr.com/"], :root a[href^="http://www.easydownloadnow.com/"], :root a[href^="https://go.alxbgo.com/"], :root a[href*=".inclk.com/"], :root a[href^="https://go.ad2up.com/"], :root a[href^="https://giftsale.co.uk/?utm_"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://fonts.fontplace9.com/"], :root a[href^="http://clkmon.com/adServe/"], :root a[href^="https://flirtaescopa.com/"], :root a[href^="https://fertilitycommand.com/"], :root a[href^="https://fakelay.com/"], :root a[href^="https://earandmarketing.com/"], :root [lazy-ad="leftthin_banner"], :root a[href^="https://dynamicadx.com/"], :root a[href^="https://djtcollectorclub.org/"][href*="?affiliate_id="], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="//srv.buysellads.com/"], :root a[href^="https://dianches-inchor.com/"], :root a[href^="https://creacdn.top-convert.com/"], :root iframe[src^="https://pagead2.googlesyndication.com/"], :root a[href^="https://retiremely.com/"], :root a[href^="https://cpmspace.com/"], :root a[href^="https://cpartner.bdswiss.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root .commercial-unit-mobile-top > .v7hl4d, :root a[href^="https://click.plista.com/pets"], :root a[href^="https://chaturbate.xyz/"], :root a[href^="http://look.djfiln.com/"], :root a[href^="https://chaturbate.jjgirls.com/"][href*="?tour="], :root a[href^="https://chaturbate.com/in/?track="], :root a[href^="https://chaturbate.com/in/?tour="], :root a[href^="https://chaturbate.com/affiliates/"], :root [href*="wap4dollar.com/"], :root a[href^="https://mcdlks.com/"], :root a[href^="https://bs.serving-sys.com"], :root a[href^="https://blackorange.go2cloud.org/"], :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://affiliates.bet-at-home.com/processing/"], :root a[href^="https://ads.ad4game.com/"], :root a[href^="https://betway.com/"][href*="&a="], :root a[href^="http://www.linkbucks.com/referral/"], :root a[href^="https://azpresearch.club/"], :root a[href^="https://awptjmp.com/"], :root a[href^="http://www.fleshlight.com/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://awentw.com/"], :root a[href^="https://albionsoftwares.com/"], :root a[href^="//postlnk.com/"], :root a[href^="https://affiliate.rusvpn.com/click.php?"], :root a[href^="https://affiliate.geekbuying.com/gkbaffiliate.php?"], :root a[href^="https://adultfriendfinder.com/go/page/landing"], :root a[href*="pussl3.com"], :root a[href^="https://adswick.com/"], :root ADS-RIGHT, :root a[href^="https://tracking.trackcasino.co/"], :root a[href^="https://adserver.adreactor.com/"], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://ads.leovegas.com/redirect.aspx?"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://ads.cdn.live/"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root a[href^="https://refpaano.host/"], :root a[href^="https://meet-to-fuck.com/tds"], :root a[href^="https://adhealers.com/"], :root a[href^="http://servicegetbook.net/"], :root a[href^="https://bngpt.com/"], :root a[href^="http://clickandjoinyourgirl.com/"], :root a[href^="https://ad13.adfarm1.adition.com/"], :root a[href^="https://misspkl.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root a[href^="https://static.fleshlight.com/images/banners/"], :root app-advertisement, :root a[href^="https://ad.doubleclick.net/"], :root a[href^="http://zevera.com/afi.html"], :root a[href^="http://go.oclaserver.com/"], :root a[href^="https://ad.atdmt.com/"], :root a[href^="https://cams.imagetwist.com/in/?track="], :root .trc_rbox .syndicatedItem, :root a[href^="https://aaucwbe.com/"], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="http://hyperlinksecure.com/go/"], :root a[href^="https://track.themadtrcker.com/"], :root a[href^="https://bullads.net/get/"], :root a[href^="http://down1oads.com/"], :root a[href^="http://yads.zedo.com/"], :root a[href^="http://xtgem.com/click?"], :root a[href^="https://ads.trafficpoizon.com/"], :root div[class^="local-feed-banner-ads"], :root a[href^="http://wxdownloadmanager.com/dl/"], :root a[href^="http://www.zergnet.com/i/"], :root a[href*=".clksite.com/"], :root a[href^="http://www.webtrackerplus.com/"], :root a[href^="http://www.usearchmedia.com/signup?"], :root a[href^="http://www.torntv-downloader.com/"], :root a[href^="http://www.tirerack.com/affiliates/"], :root a[href^="http://www.text-link-ads.com/"], :root a[href^="https://gghf.mobi/"], :root a[href^="http://www.terraclicks.com/"], :root a[href^="https://ads-for-free.com/click.php?"], :root a[href^="http://www.socialsex.com/"], :root a[href^="https://join.virtualtaboo.com/track/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root [href^="https://awbbjmp.com/"], :root a[href^="http://www.sfippa.com/"], :root a[href^="http://www.xmediaserve.com/"], :root a[href^="http://www.sex.com/videos/?utm_"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://www.sex.com/?utm_"], :root a[href^="http://secure.signup-page.com/"], :root a[href^="http://www.quick-torrent.com/download.html?aff"], :root a[href^="http://www.plus500.com/?id="], :root [href*=".zlinkm.com/"], :root a[href^="http://www.pinkvisualgames.com/?revid="], :root a[href^="https://trklvs.com/"], :root a[href^="http://www.paddypower.com/?AFF_ID="], :root a[href^="https://go.247traffic.com/"], :root a[href^="http://www.freefilesdownloader.com/"], :root a[href^="http://www.mysuperpharm.com/"], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://www.myfreepaysite.com/sfw_int.php?aid"], :root a[href^="http://www.myfreepaysite.com/sfw.php?aid"], :root a[href^="http://www.mrskin.com/tour"], :root a[href^="http://bcntrack.com/"], :root a[href^="http://www.securegfm.com/"], :root a[href^="http://www.liversely.net/"], :root a[href^="https://partners.fxoro.com/click.php?"], :root [href*="//trackmstr.com"], :root [href*="prayuserparka.com/"], :root a[href^="http://www.idownloadplay.com/"], :root a[href^="http://www.hitcpm.com/"], :root a[href^="http://fusionads.net"], :root a[href^="http://www.hibids10.com/"], :root div[class^="awpcp-random-ads"], :root [href*="//securesafemembers.com"], :root a[href^="http://www.graboid.com/affiliates/"], :root a[href^="http://www.gamebookers.com/cgi-bin/intro.cgi?"], :root div[id^="div_openx_ad_"], :root a[href^="http://www.friendlyquacks.com/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href*=".tfaln.com/"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="https://content.oneindia.com/www/delivery/"], :root a[href^="http://www.fpcTraffic2.com/blind/in.cgi?"], :root a[href^="http://www.flashx.tv/downloadthis"], :root .trc_rbox_div a[target="_blank"][href^="http://tab"], :root a[href^="https://americafirstpolls.com/"], :root a[href^="http://clickserv.sitescout.com/"], :root a[href^="http://www.firstload.de/affiliate/"], :root a[href^="http://www.friendlyadvertisements.com/"], :root a[href^="http://www.firstload.com/affiliate/"], :root a[href^="http://go.seomojo.com/tracking202/"], :root a[href^="http://www.downloadweb.org/"], :root a[href^="http://www.down1oads.com/"], :root a[href^="http://www.dealcent.com/register.php?affid="], :root a[href^="http://www.clkads.com/adServe/"], :root a[href^="https://aff-ads.stickywilds.com/"], :root a[href^="http://www.bitlord.me/share/"], :root .grid > .container > #aside-promotion, :root a[href^="http://www.babylon.com/welcome/index?affID"], :root a[onmousedown^="this.href='/wp-content/embed-ad-content/"], :root a[href^="http://popup.taboola.com/"], :root a[href^="//adbit.co/?a=Advertise&"], :root a[href^="https://fast-redirecting.com/"], :root a[href^="https://bluedelivery.pro/"], :root [href^="http://join.michelle-austin.com/"], :root a[href^="http://www.sexgangsters.com/?pid="], :root a[href^="http://www.amazon.co.uk/exec/obidos/external-search?"], :root a[href^="http://c.jumia.io/"], :root a[href^="http://www.affiliates1128.com/processing/"], :root a[href^="http://go.ad2up.com/"], :root a[href^="https://badoinkvr.com/"], :root a[href*="/adServe/banners?"], :root a[href^="http://www.adxpansion.com"], :root a[href^="http://www.ragazzeinvendita.com/?rcid="], :root .plistaList > .itemLinkPET, :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"], :root a[href^="http://www.adbrite.com/mb/commerce/purchase_form.php?"], :root a[href^="http://www.TwinPlan.com/AF_"], :root a[href^="http://www.FriendlyDuck.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="http://www.1clickdownloader.com/"], :root a[href^="http://www.123-reg.co.uk/affiliate2.cgi"], :root div[itemtype="http://www.schema.org/WPAdBlock"], :root a[href^="http://wopertific.info/"], :root a[href^="http://bodelen.com/"], :root a[href^="http://wgpartner.com/"], :root a[href^="http://web.adblade.com/"], :root a[href^="https://go.onclasrv.com/"], :root a[href^="http://wct.link/"], :root a[href^="http://us.marketgid.com"], :root a[href^="http://ul.to/ref/"], :root a[href^="http://ucam.xxx/?utm_"], :root a[href^="http://traffic.tc-clicks.com/"], :root a[href^="http://www.liutilities.com/"], :root a[href^="http://www.dl-provider.com/search/"], :root a[href^="http://tc.tradetracker.net/"] > img, :root a[href^="http://tracking.deltamediallc.com/"], :root div[aria-label="Ads"], :root a[href^="http://axdsz.pro/"], :root a[href^="https://go.ebrokerserve.com/"], :root a[href^="http://galleries.securewebsiteaccess.com/"], :root a[href^="http://stateresolver.link/"], :root a[href^="http://sharesuper.info/"], :root a[href^="https://awecrptjmp.com/"], :root a[href^="http://server.cpmstar.com/click.aspx?poolid="], :root a[href^="http://see.kmisln.com/"], :root a[href^="//db52cc91beabf7e8.com/"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root a[href^="http://secure.vivid.com/track/"], :root a[href^="http://www.downloadthesefiles.com/"], :root a[href^="http://secure.cbdpure.com/aff/"], :root a[href*="?adlivk="][href*="&refer="], :root a[href^="//look.djfiln.com/"], :root a[href^="http://searchtabnew.com/"], :root aside[id^="advads_ad_widget-"], :root a[href^="http://lp.ezdownloadpro.info/"], :root a[href^="http://uploaded.net/ref/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="http://s9kkremkr0.com/"], :root a[href^="http://azmobilestore.co/"], :root a[href^="http://s5prou7ulr.com/"], :root a[href^="http://rs-stripe.wsj.com/stripe/redirect"], :root a[href^="https://easygamepromo.com/ef/custom_affiliate/"], :root a[href^="http://record.betsafe.com/"], :root a[href*="a2g-secure.com"], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root a[href^="http://buysellads.com/"], :root a[href^="http://reallygoodlink.freehookupaffair.com/"], :root a[href^="https://bnsjb1ab1e.com/"], :root a[href^="//oardilin.com/"], :root a[href^="http://pwrads.net/"], :root a[href^="http://promos.bwin.com/"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://play4k.co/"], :root a[href*="//ezofferz.com/"], :root a[href^="https://dltags.com/"], :root a[href^="http://onclickads.net/"], :root a[href^="http://www.twinplan.com/AF_"], :root a[href^="http://n.admagnet.net/"], :root a[href^="//awejmp.com/"], :root a[href^="http://mob1ledev1ces.com/"], :root a[href^="http://mmo123.co/"], :root a[href^="http://media.paddypower.com/redirect.aspx?"], :root a[href^="https://fileboom.me/pr/"], :root a[href^="http://marketgid.com"], :root a[href^="https://track.trkinator.com/"], :root div[id^="ad-position-"], :root a[data-redirect^="this.href='http://paid.outbrain.com/network/redir?"], :root a[href^="http://liversely.com/"], :root a[href^="http://keep2share.cc/pr/"], :root a[href^="https://gamescarousel.com/"], :root a[href^="http://istri.it/?"], :root a[href^="http://www.fbooksluts.com/"], :root a[href^="http://www.cdjapan.co.jp/aff/click.cgi/"], :root a[href*="//ridingintractable.com/"], :root a[href^="http://c.actiondesk.com/"], :root a[href^="http://intent.bingads.com/"], :root a[href^="https://intrev.co/"], :root a[href^="http://https://www.get-express-vpn.com/offer/"], :root a[href^="//voyeurhit.com/cs/"], :root [href*=".go2page.net"], :root a[href^="http://hd-plugins.com/download/"], :root a[href^="http://greensmoke.com/"], :root a[href^="https://look.utndln.com/"], :root a[href^="//5e1fcb75b6d662d.com/"], :root a[href^="http://googleads.g.doubleclick.net/pcs/click"], :root .nrelate .nr_partner, :root a[href^="http://go.xtbaffiliates.com/"], :root a[href*=".purple6401.com/"], :root a[href^="https://oackoubs.com/"], :root a[href^="http://install.securewebsiteaccess.com/"], :root a[href^="http://www.revenuehits.com/"], :root a[href^="http://go.mobisla.com/"], :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"], :root a[href^="http://g1.v.fwmrm.net/ad/"], :root a[href^="http://imads.integral-marketing.com/"], :root a[href^="http://freesoftwarelive.com/"], :root a[href^="http://adtrackone.eu/"], :root span[title="Ads by Google"], :root a[href^="http://finaljuyu.com/"], :root a[href^="https://www.im88trk.com/"], :root a[href^="http://ffxitrack.com/"], :root a[href^="http://t.wowtrk.com/"], :root a[href^="//syndication.dynsrvtbg.com/splash.php?"], :root a[href^="http://extra.bet365.com/"][href*="?affiliate="], :root a[href^="http://ethfw0370q.com/"], :root [href^="http://go.cm-trk2.com/"], :root a[href^="https://tracking.comfortclick.eu/"], :root [id^="bunyad_ads_"], :root a[href^="http://elitefuckbook.com/"], :root a[href^="http://eclkmpsa.com/"], :root a[href^="http://earandmarketing.com/"], :root a[href*=".mfroute.com/"], :root #content > #center > .dose > .dosesingle, :root a[href^="http://campaign.bharatmatrimony.com/track/"], :root a[href*="3wr110.xyz/"], :root a[href^="http://d2.zedo.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://www.downloadplayer1.com/"], :root a[href^="http://clicks.binarypromos.com/"], :root a[href^="https://dediseedbox.com/clients/aff.php?"], :root [href^="/ucmini.php"], :root [href^="https://innyweakela.co"], :root a[href^="http://www.wantstraffic.com/"], :root a[href^="http://track.afcpatrk.com/"], :root a[href^="http://databass.info/"], :root div[data-test-id="AdBannerWrapper"], :root div[class^="AdCard_"], :root a[href^="http://www.urmediazone.com/signup"], :root a[href^="http://click.plista.com/pets"], :root a[href^="http://chaturbate.com/affiliates/"], :root [href^="https://secure.bmtmicro.com/servlets/"], :root a[href^="http://amzn.to/"] > img[src^="data"], :root a[href^="http://bs.serving-sys.com/"], :root a[href^="http://cpaway.afftrack.com/"], :root a[href^="http://cdn.adsrvmedia.net/"], :root [lazy-ad="top_banner"], :root a[href^="http://360ads.go2cloud.org/"], :root a[href^="http://dftrck.com/"], :root a[href^="http://casino-x.com/?partner"], :root a[href^="https://meet-sexhere.com/"], :root a[href^="http://record.sportsbetaffiliates.com.au/"], :root a[href^="http://campeeks.com/"][href*="&utm_"], :root a[href^="http://download-performance.com/"], :root a[href^="http://www.on2url.com/app/adtrack.asp"], :root #\5f _nq__hh[style="display:block!important"], :root [href^="https://affect3dnetwork.com/track/"], :root div[class^="index_displayAd_"], :root a[href^="http://adultgames.xxx/"], :root a[href^="https://s.zlink2.com/"], :root a[href^="http://semi-cod.com/clicks/"], :root a[href*="//bongacams4.com/track?"], :root a[href^="http://campaign.bharatmatrimony.com/cbstrack/"], :root a[href^="http://www.seekbang.com/cs/"], :root a[href^="http://syndication.exoclick.com/"], :root a[href^="http://k2s.cc/pr/"], :root [src*="https://cdn.cloudimagesb.com/"], :root a[href^="http://bluehost.com/track/"], :root div[id^="vuukle-ad-"], :root a[href^="http://betahit.click/"], :root a[href^="https://torguard.net/aff.php"] > img, :root a[href^="http://bestorican.com/"], :root a[href^="http://bcp.crwdcntrl.net/"], :root a[href^="https://windscribe.com/promo/"], :root a[href^="http://farm.plista.com/pets"], :root a[href^="https://leg.xyz/?track="], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="https://transfer.xe.com/signup/track/redirect?"], :root a[href^="http://anonymous-net.com/"], :root aside[itemtype="https://schema.org/WPAdBlock"], :root a[href^="https://watchmygirlfriend.tv/"], :root a[href^="https://ovb.im/"], :root a[href^="http://hotcandyland.com/partner/"], :root a[href^="http://affiliates.thrixxx.com/"], :root #atvcap + #tvcap > .mnr-c > .commercial-unit-mobile-top, :root a[href*="/adrotate-out.php?"], :root a[href^="http://affiliates.lifeselector.com/"], :root a[href^="http://affiliate.coral.co.uk/processing/"], :root a[href^="http://aff.ironsocket.com/"], :root div[id^="drudge-column-ads-"], :root a[href*="//bongacams10.com/track?"], :root a[href^="http://tour.mrskin.com/"], :root [src^="/Redirect.a2b?"], :root a[href^="http://linksnappy.com/?ref="], :root ad-desktop-sidebar, :root [data-ad-width], :root [id*="MGWrap"], :root a[href^="http://9amq5z4y1y.com/"], :root a[href^="http://adtrack123.pl/"], :root a[href^="http://adsrv.keycaptcha.com"], :root a[href^="http://deloplen.com/afu.php?zoneid="], :root div[class^="adpubs-"], :root a[href*="deliver.trafficfabrik.com"], :root div[class^="StickyHeroAdWrapper-"], :root a[href^="http://cwcams.com/landing/click/"], :root a[href^="http://ads.betfair.com/redirect.aspx?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="http://adserver.adtech.de/"], :root a[href^="http://adserver.adreactor.com/"], :root a[href^="http://ads.sprintrade.com/"], :root a[data-redirect^="http://click.plista.com/pets"], :root .section-subheader > .section-hotel-prices-header, :root a[href^="http://landingpagegenius.com/"], :root [href^="https://click2cvs.com/"], :root a[href^="http://ads.expekt.com/affiliates/"], :root a[href^="http://tezfiles.com/pr/"], :root div[class^="Ad__container"], :root a[href^="http://adprovider.adlure.net/"], :root a[href^="http://reallygoodlink.extremefreegames.com/"], :root a[href^="http://adlev.neodatagroup.com/"], :root [href*="//mclick.net"], :root a[href^="http://adclick.g.doubleclick.net/"], :root a[href^="http://www.sex.com/pics/?utm_"], :root a[href^="http://vo2.qrlsx.com/"], :root [href^="https://stvkr.com/"], :root a[href^="http://engine.newsmaxfeednetwork.com/"], :root a[href^="http://ad.yieldmanager.com/"], :root [href^="http://homemoviestube.com/"], :root a[href^="http://ad.doubleclick.net/"], :root a[href^="http://websitedhoome.com/"], :root a[href^="https://clickadilla.com/"], :root .ob_container .item-container-obpd, :root a[href*=".directtl.xyz/"], :root a[href^="http://www.adskeeper.co.uk/"], :root a[href^="http://ad-emea.doubleclick.net/"], :root a[href^="http://srvpub.com/"], :root [data-dynamic-ads], :root a[href^="http://a.adquantix.com/"], :root a[href^="http://NowDownloadAll.com"], :root a[href^="http://1phads.com/"], :root a[href^="https://ismlks.com/"], :root a[href^="//zenhppyad.com/"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="//z6naousb.com/"], :root a[href^="//www.pd-news.com/"], :root div[id^="ads250_250-widget"], :root [href^="https://go.astutelinks.com/"], :root [href*=".doubleclick-net.com"], :root a[href^="//www.mgid.com/"], :root a[href^="http://lp.ncdownloader.com/"], :root a[href^="//pubads.g.doubleclick.net/"], :root a[href^="http://3wr110.net/"], :root #topstuff > #tads, :root a[href*=".bang.com/"][href*="&aff="], :root .pubexchange_module .pe-external, :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://join3.bannedsextapes.com/track/"], :root [href^="http://join.shemalesfromhell.com/"], :root a[href^="https://www.travelzoo.com/oascampaignclick/"], :root a[href^="https://see.kmisln.com/"], :root [src^="//adtorio.com/"], :root a[href^="http://refer.webhostingbuzz.com/"], :root a[href^="//nlkdom.com/"], :root a[href^="https://www.xvinlink.com/?a_fid="], :root a[href^="//medleyads.com/spot/"], :root [href^="https://mylead.global/stl/"] > img, :root a[href^="https://ilovemyfreedoms.com/"][href*="?affiliate_id="], :root [href*=".afftracks.online/"], :root div[class^="Component-dfp-"], :root a[href^="//healthaffiliate.center/"], :root [onclick*="content.ad/"], :root a[href^="https://clixtrac.com/"], :root a[href^="//88d7b6aa44fb8eb.com/"], :root a[href^="http://go.fpmarkets.com/"], :root a[href^="//00ae8b5a9c1d597.com/"], :root [href^="http://join.ts-dominopresley.com/"], :root a[href^=".vddfe.club/"], :root [href^="/ucdownloader.php"], :root a[href^="https://awejmp.com/"], :root [href*="//go2page.net"], :root a[href^=" http://www.sex.com/"][href*="&utm_"], :root [href^="https://mysbitl.com"], :root a[href*="onclkds."], :root a[href^="https://adclick.g.doubleclick.net/"], :root a[href*=".intab.fun/"], :root a[href*="get-express-vpn.xyz"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href*="=adscript"], :root a[href*="=Adtracker"], :root a[href^="https://members.linkifier.com/public/affiliateLanding?refCode="], :root a[href^="https://jmp.awempire.com/"], :root [href^="https://wct.link/"], :root a[href^="https://track.totalav.com/"], :root a[href^="http://ad-apac.doubleclick.net/"], :root a[href*="/servlet/click/zone?"], :root a[href^="http://track.trkvluum.com/"], :root a[href^="https://www.chngtrack.com/"], :root a[href*="=exoclick"], :root a[href^="http://www.firstclass-download.com/"], :root a[href*="//bongacams7.com/track?"], :root a[href^="http://k2s.cc/code/"], :root div[id^="tms-ad-dfp-"], :root a[href^="https://trust.zone/go/r.php?RID="], :root a[href^="http://c43a3cd8f99413891.com/"], :root a[href*="//syndication.optimizesrv.com/splash.php?"], :root a[href*="//bongacams2.com/track?"], :root a[href^="//4f6b2af479d337cf.com/"], :root [href*="//doubleclick-net.com"], :root div[id^="advads-"], :root a[href^="http://www.myfreecams.com/?co_id="][href*="&track="], :root a[href^="https://track.afcpatrk.com/"], :root a[href*=".ad-center.com/"], :root a[href*=".udncoeln.com/"], :root a[href*=".surfmdia.com/"], :root a[href*=".smartadserver.com"], :root a[href^="http://z1.zedo.com/"], :root a[href*=".irtyc.com/"], :root a[href^="https://uncensored3d.com/"], :root a[href^="http://adf.ly/?id="], :root a[href^="https://usenetxs.website/"], :root a[href^="http://pokershibes.com/index.php?ref="], :root a[href^="http://api.content.ad/"], :root a[href*=".clkcln.com/"], :root [data-ad-manager-id], :root div[class^="adUnit_"], :root a[href^="https://deliver.tf2www.com/"], :root a[href^="http://spygasm.com/track?"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root [src*="//www.dianomi.com/smartads.epl"], :root a[href*=".adk2x.com/"], :root a[href^="http://www.mobileandinternetadvertising.com/"], :root [href^="https://join.playboyplus.com/track/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root [href^="https://www.reimageplus.com/"], :root div[id^="cns_ads_"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root a[href^="http://enter.anabolic.com/track/"], :root a[data-nvp*="'trafficUrl':'https://paid.outbrain.com/network/redir?"], :root a[href^="http://a63t9o1azf.com/"], :root a[href*=".axdsz.pro/"], :root a[href^="http://allaptair.club/"], :root [href*=".engine.adglare.net/"], :root a[href^="http://www.badoink.com/go.php?"], :root a[class="RBAd"], :root a[href^="http://banners.victor.com/processing/"], :root [href^="http://raboninco.com/"], :root a[href^="http://fsoft4down.com/"], :root a[href*="ad2upapp.com/"], :root a[href*=".fwd28.com/"], :root [lazy-ad="leftbottom_banner"], :root dile-cookies-consent, :root [id^="div-gpt-ad"], :root a[href^="https://playuhd.host/"], :root [href^="https://go.affiliatexe.com/"], :root a[href^="http://mgid.com/"], :root a[href*=".adsrv.eacdn.com/"] > img, :root [href^="https://ptwmjmp.com/"], :root a[href^="http://espn.zlbu.net/"], :root a[href^="http://admrotate.iplayer.org/"], :root [href^="http://join.rodneymoore.com/"], :root [id*="MarketGid"], :root [href*="//etracking.pro"], :root a[href^="http://www.fonts.com/BannerScript/"], :root a[href^="http://c.ketads.com/"], :root a[href^="http://6kup12tgxx.com/"], :root [href^="https://freecourseweb.com/"] > .sitefriend, :root [href^="https://www.hostg.xyz/aff_c"] > img, :root [href*="//trackout.business"], :root [href^="https://veepn.g2afse.com/"], :root a[href^="https://syndication.exoclick.com/splash.php?"], :root [href*="maskip.co/"], :root [href^="https://traffserve.com/"], :root a[data-oburl^="http://paid.outbrain.com/network/redir?"], :root a[href^="http://refpa.top/"], :root a[href*="//bongacams.com/track?"], :root a[href^="https://servedbyadbutler.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://mob1ledev1ces.com/"], :root a[data-redirect^="http://paid.outbrain.com/network/redir?"], :root a[href^="https://promo-bc.com/"], :root a[href^="https://explore.findanswersnow.net/"], :root [id^="adframe_wrap_"], :root div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"], :root a[href^="https://go.trackitalltheway.com/"], :root [data-template-type="nativead"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="http://www.roboform.com/php/land.php"], :root div[id^="yandex_ad"], :root a[href^="https://www.pornhat.com/"][rel="nofollow"], :root a[href^="https://www.hotgirls4fuck.com/"], :root a[href*=".frtyl.com/"], :root a[href^="http://y1jxiqds7v.com/"], :root [href^="https://online-protection-now.com/"], :root a[href^="https://traffic.bannerator.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="http://online.ladbrokes.com/promoRedirect?"], :root a[href^="//mob1ledev1ces.com/"], :root [href^="https://go.4rabettraff.com/"], :root a[href^="https://delivery.porn.com/"], :root a[href^="https://www.firstload.com/affiliate/"], :root .trc_related_container div[data-item-syndicated="true"], :root a[href^="https://freeadult.games/"], :root a[href^="http://liversely.net/"], :root a[href^="http://www.coiwqe.site/"], :root iframe[id^="google_ads_frame"], :root a[href^="http://www.bet365.com/"][href*="affiliate="], :root a[href^="http://www.bluehost.com/track/"] > img, :root a[data-url^="http://paid.outbrain.com/network/redir?"], :root a[href^="https://www.popads.net/users/"], :root a[href^="http://www.advcashpro.com/aff/"], :root a[href^="http://adultfriendfinder.com/p/register.cgi?pid="], :root a[href^="http://secure.hostgator.com/~affiliat/"], :root [onclick^="window.open('http://adultfriendfinder.com/search/"], :root [onclick^="window.open('window.open('//delivery.trafficfabrik.com/"], :root [href^="/admdownload.php"], :root iframe[src^="http://ad.yieldmanager.com/"], :root a[href^="http://pubads.g.doubleclick.net/"], :root a[href^="https://porntubemate.com/"], :root a[href^="http://www.gfrevenge.com/landing/"], :root a[href^="http://45eijvhgj2.com/"], :root a[href^="http://hpn.houzz.com/"], :root div[id^="ad_bigbox_"], :root #content > #right > .dose > .dosesingle, :root a[href^="http://9nl.es/"], :root a[href^="https://scurewall.co/"], :root div[class*="_browserAdOuterContainer_"], :root [name^="google_ads_iframe"], :root a[href^="http://bc.vc/?r="], :root a[href^="http://www.afgr2.com/"], :root [href^="https://shrugartisticelder.com"], :root [href^="http://globsads.com/"], :root a[href^="https://deliver.ptgncdn.com/"], :root a[href^="http://latestdownloads.net/download.php?"], :root [href^="https://www.targetingpartner.com/"], :root a[href^="http://see-work.info/"], :root a[href*=".orange2258.com/"], :root #taw > .med + div > #tvcap > .mnr-c:not(.qs-ic) > .commercial-unit-mobile-top, :root .plista_widget_belowArticleRelaunch_item[data-type="pet"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root a[href^="http://affiliates.score-affiliates.com/"], :root a[href^="https://wantopticalfreelance.com/"], :root [href^="/ucdownload.php"], :root a[href*=".allsports4you.club"], :root div[id^="div_ad_stack_"], :root a[href*=".ichlnk.com/"], :root a[href^="http://click.payserve.com/"], :root a[href^="http://serve.williamhill.com/promoRedirect?"], :root [class*="__adspot-title-container"], :root a[href*="n47adshostnet.com/"], :root a[href*=".cfm?fp="][href*="&prvtof="], :root a[href^="https://sexsimulator.game/tab/?SID="], :root .rc-cta[data-target], :root [id^="ad-wrap-"], :root div[id^="ad-gpt-"], :root a[href^="http://pan.adraccoon.com?"], :root hl-adsense, :root div[data-contentexchange-widget], :root [href^="http://www.star-clicks.com/"], :root [href^="http://join.hardcoreshemalevideo.com/"], :root a[href^="http://ads2.williamhill.com/redirect.aspx?"], :root a[href*=".xromp.com/landing/click/"], :root a[href^="https://click.hoolig.app/"], :root a[href^="http://www.download-provider.org/"], :root a[href^="https://10dfkuvbdkfv.club/"], :root AD-TRIPLE-BOX, :root [class^="Ad-adContainer"], :root a[href^="https://a.bestcontentfood.top/"], :root #ads > .dose > .dosesingle, :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > div > .vci, :root a[href*="delivery.trafficfabrik.com"], :root div[class$="_b-ad-main"], :root a[href*=".trck5.com/"], :root .trc_rbox_div .syndicatedItem, :root a[href^="http://www.streamate.com/exports/"], :root a[href^="https://www.arthrozene.com/"][href*="?tid="], :root .card-captioned.crd > .crd--cnt > .s2nPlayer, :root a[href^="http://adserving.unibet.com/"], :root a[href*=".qertewrt.com/"], :root [id*="ScriptRoot"], :root a[href^="http://fileboom.me/pr/"], :root a[href*=".trust.zone"], :root a[href^="https://adsrv4k.com/"], :root a[href^="http://trk.mdrtrck.com/"], :root [href^="https://refpahrwzjlv.top/"], :root a[href^="http://czotra-32.com/"], :root [href*=".mclick.net"], :root [href*=".grtya.com/"], :root a[href^="http://refpaano.host/"], :root a[href*="/cmd.php?ad="], :root [href^="https://bulletprofitsmartlink.com/"], :root [href^="https://join3.bannedsextapes.com"], :root a[href^="http://www.streamtunerhd.com/signup?"], :root div[class^="hp-ad-rect-"], :root a[href^="http://dwn.pushtraffic.net/"], :root a[href$="/vghd.shtml"], :root div[id^="crt-"][style], :root a[href^="http://igromir.info/"], :root div[id^="div-ads-"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="http://at.atwola.com/"], :root a[href^="https://www.g4mz.com/"], :root a[href^="http://webgirlz.online/landing/"], :root [href*="cadsecs.com/"], :root a[href^="https://msecure117.com/"], :root [href^="http://stvkr.com/"], :root a[href^="https://keep2share.cc/pr/"], :root [class*="auto-bottom-advertising-"], :root a[href^="https://t.mobtya.com/"], :root a[href^="https://www.adxtro.com/"], :root [class*="__adv-block"], :root a[href^="https://farm.plista.com/pets"], :root a[href*=".red90121.com/"], :root FBS-AD, :root a[href*="//bongacams5.com/track?"], :root a[href^="http://www.afgr3.com/"], :root [ad-id^="googlead"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root [href^="https://join.girlsoutwest.com/"], :root a[href^="http://taboola-"][href*="/redirect.php?app.type="], :root a[href^="http://www.menaon.com/installs/"], :root a[href^="https://financeads.net/tc.php?"], :root .commercial-unit-mobile-top .jackpot-main-content-container > .UpgKEd + .nZZLFc > .vci, :root a[href^="https://www.oneclickroot.com/?tap_a="] > img, :root a[href^="//porngames.adult/?SID="], :root DFP-AD, :root a[href^="https://mmwebhandler.aff-online.com/"], :root [href^="https://r.kraken.com/"], :root a[href^="http://www.pinkvisualpad.com/?revid="], :root a[href^="https://www.friendlyduck.com/AF_"], :root [href^="http://advertisesimple.info/"], :root [lazy-ad="lefttop_banner"], :root a[href^="https://a.adtng.com/"], :root a[href^="http://static.fleshlight.com/images/banners/"], :root a[href^="https://www.adskeeper.co.uk/"], :root [href^="https://www.highrevenuecpm.com"], :root a[href^="https://secure.cbdpure.com/aff/"], :root AMP-AD, :root a[href^="https://syndication.dynsrvtbg.com/splash.php?"], :root [href^="http://join.trannies-fuck.com/"], :root a[href^="http://aflrm.com/"], :root div[id^="google_dfp_"], :root [href*="get-download.club/"], :root [href^="https://www.xvbelink.com/"], :root a[href^="http://affiliates.pinnaclesports.com/processing/"], :root #header + #content > #left > #rlblock_left, :root a[href^="http://partners.etoro.com/"], :root [id^="google_ads_iframe"], :root .vid-present > .van_vid_carousel__padding, :root a[href^="http://goldmoney.com/?gmrefcode="], :root a[href^="http://papi.mynativeplatform.com:80/pub2/"], :root LEADERBOARD-AD, :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root [class*="-slot_ad-placements-"], :root [href^="http://join.shemale.xxx/"], :root a[href^="https://www.oboom.com/ad/"], :root [href*=".adcampo.com/"], :root [href^="https://pulsetrack.biz/"], :root a[href^="https://trackjs.com/?utm_source"], :root AFS-AD, :root a[href^="https://secure.starsaffiliateclub.com/C.ashx?"], :root .trc_rbox_div .syndicatedItemUB, :root [href*=".xiloy.site/"], :root [src^="http://api.lanistaads.com/ServeAd?"], :root a[href^="http://webtrackerplus.com/"], :root [href*=".jetx.info/"], :root [href*=".trackout.business"], :root a[href^="http://get.slickvpn.com/"], :root [data-ad-module], :root a[href^="https://track.bruceads.com/"], :root a[id^="ads_banner_"], :root a[href^="https://porngames.adult/?SID="], :root a[href^="http://findersocket.com/"], :root a[href^="https://m.do.co/c/"] > img, :root [href*=".ltroute.com/"] { display: none !important; }
+:root a[href^="//jsmptjmp.com/"], :root a[href*=".adform.net/"], :root a[href^="http://www.onwebcam.com/random?t_link="], :root a[href^="http://www.getyourguide.com/?partner_id="], :root [onclick^="window.open('https://www.brazzersnetwork.com/landing/"], :root a[href^="http://codec.codecm.com/"], :root [href*=".directtf.xyz/"], :root a[href*="//promo-bc.com/track?"], :root a[href^="https://as.sexad.net/"], :root a[href^="//40ceexln7929.com/"], :root a[href$="/5-"][target="_blank"][rel="nofollow"], :root .commercial-unit-mobile-top > div[data-pla="1"], :root a[href*=".revimedia.com/"], :root [href*=".securesafemembers.com"], :root a[href^="https://secure.adnxs.com/clktrb?"], :root a[href^="http://adserver.adtechus.com/"], :root a[href^="https://topoffers.com/"][href*="/?pid="], :root a[href^="http://vinfdv6b4j.com/"], :root [href^="https://dooloust.net/"], :root [data-freestar-ad], :root a[href*=".opskln.com/"], :root a[href^="http://xads.zedo.com/"], :root [class^="div-gpt-ad"], :root [href*=".revrtb.com/"], :root a[href^="https://goraps.com/"], :root [href*=".etracking.pro"] { display: none !important; }</style><script src="chrome-extension://enegjkbbakeegngfapepobipndnebkdk/web3_insights_page.js"></script><script charset="utf-8" src="./jgtrgrtsgres_files/button.0d6aa7fd095b2a9dd19cc66c7c2ed64b.js"></script></head>
+<body>
+<div style="background: url(bg.png);" id="head">
+<div class="timebar" id="whattime" align="right">現在時刻　16時56分42秒　　</div>
+<div id="full">
+<div class="navikit">
+最終更新日：2020年11月21日<br>
+<a href="https://udonsimulator.web.fc2.com/index.htm">TOP</a> &gt; <a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#head">シミュレーター</a> &gt; 大船駅発車標シミュレーター
+</div>
+<div class="transport">
+＜藤沢[JT-08]　大　船　戸塚[JT-06]＞
+<!-- 戸塚シミュ完成後に書き換え -->
+<!--＜藤沢[JT-08]　大　船　<a href="../totsuka/index.htm">戸塚[JT-06]</a>＞-->
+</div>
+<hr>
+
+<div class="LEDwriteArea">
+	<img style="position: absolute; margin-left: 0px; margin-top: 0px;" alt="ペース" src="./jgtrgrtsgres_files/kasama-exit_base.png" name="changeBOX">
+		<img style="position: absolute; margin-left: 47px; margin-top: 73px;" alt="" src="./jgtrgrtsgres_files/h16.png" id="clockH">
+		<img style="position: absolute; margin-left: 83px; margin-top: 73px;" alt="" src="./jgtrgrtsgres_files/m56.png" id="clockM">
+		<img style="position: absolute; margin-left: 47px; margin-top: 73px;" alt="" src="./jgtrgrtsgres_files/clear.png" id="mclockH">
+		<img style="position: absolute; margin-left: 83px; margin-top: 73px;" alt="" src="./jgtrgrtsgres_files/clear.png" id="mclockM">
+	<p class="row1">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 129px;" alt="" src="./jgtrgrtsgres_files/h16(1).png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 129px;" alt="" src="./jgtrgrtsgres_files/m58.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top: 129px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/narita-airport_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 129px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/b05_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 129px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 129px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/suka_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 129px;" alt="" src="./jgtrgrtsgres_files/b_ssssspsss.png" name="changeLED_stundby">
+	</p>
+	<p class="row2">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 155px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 155px;" alt="" src="./jgtrgrtsgres_files/m00.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top: 155px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/utsunomiya_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 155px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/o02_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 155px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 155px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/utl_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 155px;" alt="" src="./jgtrgrtsgres_files/o_sppspsssss.png" name="changeLED_stundby">
+	</p>
+	<p class="row3">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 181px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 181px;" alt="" src="./jgtrgrtsgres_files/m03.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top: 181px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/kagohara_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 181px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/g02_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 181px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 181px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/ssl_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 181px;" alt="" src="./jgtrgrtsgres_files/g_sppsspppppnssss.png" name="changeLED_stundby">
+	</p>
+	<p class="row4">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 207px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 207px;" alt="" src="./jgtrgrtsgres_files/m06.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top: 207px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/koganei_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 207px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/o02_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 207px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 207px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/utl_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 207px;" alt="" src="./jgtrgrtsgres_files/o_sppspsssss.png" name="changeLED_stundby">
+	</p>
+	<p class="row5">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 233px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 233px;" alt="" src="./jgtrgrtsgres_files/m07.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top: 233px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/kazusa-ichinomiya_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 233px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/b05_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 233px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 233px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/suka_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 233px;" alt="" src="./jgtrgrtsgres_files/b_ssssspsss.png" name="changeLED_stundby">
+	</p>
+	<p class="row6">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 259px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 259px;" alt="" src="./jgtrgrtsgres_files/m10.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top: 259px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/narita-airport_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 259px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/r06_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 259px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/ltdexp-dep_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 259px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/nex-47_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 259px;" alt="" src="./jgtrgrtsgres_files/r_sppsspsps.png" name="changeLED_stundby">
+	</p>
+	<p class="row7">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 285px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 285px;" alt="" src="./jgtrgrtsgres_files/m12.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top: 285px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/tokyo_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 285px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/r02_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 285px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/ltdexp_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 285px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/odoriko-16_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 285px;" alt="" src="./jgtrgrtsgres_files/r_pppspssps.png" name="changeLED_stundby">
+	</p>
+	<p class="row8">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 311px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 311px;" alt="" src="./jgtrgrtsgres_files/m15.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top:311px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/koganei_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 311px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/g05_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 311px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 311px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/ssl_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 311px;" alt="" src="./jgtrgrtsgres_files/g_ssssspppppnssss.png" name="changeLED_stundby">
+	</p>
+	<p class="row9">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 337px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 337px;" alt="" src="./jgtrgrtsgres_files/m18.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top:337px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/takasaki_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 337px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/o02_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 337px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 337px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/utl_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 337px;" alt="" src="./jgtrgrtsgres_files/o_sppspsssss.png" name="changeLED_stundby">
+	</p>
+	<p class="row10">
+		
+		<img style="position: absolute; margin-left: 47px; margin-top: 363px;" alt="" src="./jgtrgrtsgres_files/h17.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 83px; margin-top: 363px;" alt="" src="./jgtrgrtsgres_files/m21.png" name="changeLED_stundby">
+		<img style="position: absolute; margin-left: 128px; margin-top:363px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/destination/airportjingu_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 209px; margin-top: 363px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/track/b05_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 259px; margin-top: 363px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/type/null_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 309px; margin-top: 363px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/parts/other/suka_jp1.png" name="changeLED">
+		<img style="position: absolute; margin-left: 431px; margin-top: 363px;" alt="" src="./jgtrgrtsgres_files/b_ssssspsss.png" name="changeLED_stundby">
+	</p>
+		<img style="position: absolute; margin-left: 0px; margin-top: 0px;" alt="被せ" src="./jgtrgrtsgres_files/yaruki60.png" name="yaruki">
+		<img style="position: absolute; margin-left: 0px; margin-top: 0px;" alt="被せ" src="./jgtrgrtsgres_files/null.png" name="autokey">
+		<img style="position: absolute; margin-left: 0px; margin-top: 0px;" alt="被せ" src="./jgtrgrtsgres_files/null.png" name="shigoto">
+		<img style="position: absolute; margin-left: 0px; margin-top: 0px; display: none;" alt="裏返し" src="./jgtrgrtsgres_files/ura.png" name="copyguard" id="uraad">
+		<img style="position: absolute; margin-left: 0px; margin-top: 0px;" alt="被せ" src="./jgtrgrtsgres_files/null.png" name="copyguard">
+	<p style="width: 1000px; height: 500px;"></p>
+</div>
+<hr>
+<div align="right" style="position:absolute; width:1200px;">
+	<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#head">▲上へ</a><br><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku01">▼下へ</a>
+</div>
+<p id="moku0" style="position:relative;"><strong>ブラウザによっては表示が滲むことがあります。その場合はブラウザ側の表示倍率を変更(80%推奨,IEは125%→100%)してください。</strong></p>
+<hr>
+実際の運行状況には準拠していません。実際の運行状況は<a href="https://traininfo.jreast.co.jp/train_info/kanto.aspx#direction_tokaido" target="blank">こちら</a>から確認してください。（JR東日本のページにリンクします）
+<hr>
+モード選択：<select id="modeselect" size="1" onchange="random();"><option value="autoset" selected="">自動列車セットモード</option><option value="manualset">手動列車選別モード</option></select>
+ダイヤ選択：<select id="DiaJudge" size="1">
+<option value="weekkorona">平日（2020.5～減便ダイヤ）</option>
+<!--<option value="weekkorona212010">平日（2021.2.10～踊り子14・20号運転）</option>-->
+<option value="weekday200314">平日（2020.03.14改正）</option>
+<option value="holikorona">休日（2020.5～減便ダイヤ）</option>
+<!--<option value="holikorona212010">平日（2021.2.11～踊り子56号運転）</option>-->
+<option value="holiday200314">休日（2020.03.14改正）</option>
+<option value="holiday200314A">休日A（踊り子14号運転日）</option>
+<option value="holiday200314B">休日B（踊り子114号運転日）</option>
+<option value="holiday200314C">休日C（草津71号・ホリデー快速あたみ・ホリデー快速鎌倉運転日）</option>--&gt;
+<option value="holiday200314D">休日D（踊り子114号・ホリデー快速あたみ・ホリデー快速鎌倉運転日）</option>--&gt;
+<option value="holiday200314E">休日E（ホリデー快速鎌倉運転日）</option>
+<option value="holiday200314F">休日F（ホリデー快速鎌倉・踊り子14号運転日）</option>
+<option value="holiday200314G">休日G（ホリデー快速鎌倉・踊り子114号運転日）</option>
+<option value="holiday200314H">休日H（草津71号・ホリデー快速鎌倉運転日）</option>
+<option value="holiday200314I">休日I（鎌倉紅葉号・踊り子14号・ホリデー快速鎌倉運転日）</option>
+<option value="holiday200314J">休日J（鎌倉紅葉号・踊り子114号・ホリデー快速鎌倉運転日）</option>
+<!--<option value="holiday200314K">年末年始A（12月31日-終夜運転実施日-）</option>-->
+<!--<option value="holiday200314L">年末年始B（1月1日）</option>-->
+</select>（自動列車セットモードでのみ動作）
+<br>
+※休日ダイヤにおける踊り子2・12・20号はすべてのダイヤパターンに実装されています。
+<hr>
+自動列車選択モードにおける時刻設定<br>
+<form id="timemode">
+	<input name="wt" type="radio" value="real" checked="checked"> 現在時刻に設定
+	<input name="wt" type="radio" value="manu"> 任意の時刻を設定(この場合、時間は進みません。)
+</form>
+設定時刻：
+<form id="timeval">
+<input type="time" name="te" value="" disabled="">
+</form>
+<hr>
+<!-- ランダムボタン -->
+ランダムに生成するボタン（手動列車選別機能でのみ有効）<br>
+<button id="rdbtn" type="button" onclick="random()">ランダムに表示</button>
+<hr>
+<!-- 大船駅環境音再生ボタン -->
+大船駅環境音を再生するボタン<br>
+<button id="btn-play" type="button">再生/停止</button>
+<hr>
+○筐体画像切替<br>
+<select name="kyotai" size="1" onchange="box(this, 0)" id="pic">
+<option value="kasama-exit_base">北改札（笠間口・GRAND SHIP方面）</option>
+<option value="we-exit_base">南改札（湘南モノレール・ルミネウィング方面）</option>
+</select>
+筐体の裏を見る(北改札):<select id="uraura" size="1" onchange="uragaeshi()"><option value="on">ON</option><option value="off" selected="">OFF</option></select>
+<hr>
+下から<select name="yaruki0" size="1" onchange="yarukicount(this, 0)"><option value="yaruki100">0</option><option value="yaruki90">1</option><option value="yaruki80">2</option><option value="yaruki70">3</option><option value="yaruki60">4</option><option value="yaruki50">5</option><option value="yaruki40">6</option><option value="yaruki30">7</option><option value="yaruki20">8</option><option value="yaruki10">9</option><option value="yaruki0">10</option></select>段を消灯させる<br>
+調整中表示：<select name="shigoto" size="1" onchange="oshigoto(this, 0)"><option value="on">ON</option><option value="off" selected="">OFF</option></select>
+<hr>
+<div id="manualarea" style="display: none;">
+
+１段目<select name="timeH1" size="1" onchange="stund(this, 0)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM1" size="1" onchange="stund(this, 1)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des1" size="1" onchange="led(this, 0)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra1" size="1" onchange="led(this, 1)" id="A1">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type1" size="1" onchange="led(this, 2)" id="B1">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other1" size="1" onchange="led(this, 3)" id="C1">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi1" size="1" onchange="stund(this, 2)" id="D1">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+２段目<select name="timeH2" size="1" onchange="stund(this, 3)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM2" size="1" onchange="stund(this, 4)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des2" size="1" onchange="led(this, 4)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra2" size="1" onchange="led(this, 5)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type2" size="1" onchange="led(this, 6)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other2" size="1" onchange="led(this, 7)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi2" size="1" onchange="stund(this, 5)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+３段目<select name="timeH3" size="1" onchange="stund(this, 6)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM3" size="1" onchange="stund(this, 7)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des3" size="1" onchange="led(this, 8)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra3" size="1" onchange="led(this, 9)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type3" size="1" onchange="led(this, 10)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other3" size="1" onchange="led(this, 11)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi3" size="1" onchange="stund(this, 8)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+４段目<select name="timeH4" size="1" onchange="stund(this, 9)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM4" size="1" onchange="stund(this, 10)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des4" size="1" onchange="led(this, 12)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra4" size="1" onchange="led(this, 13)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type4" size="1" onchange="led(this, 14)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other4" size="1" onchange="led(this, 15)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi4" size="1" onchange="stund(this, 11)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+５段目<select name="timeH5" size="1" onchange="stund(this, 12)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM5" size="1" onchange="stund(this, 13)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des5" size="1" onchange="led(this, 16)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra5" size="1" onchange="led(this, 17)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type5" size="1" onchange="led(this, 18)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other5" size="1" onchange="led(this, 19)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi5" size="1" onchange="stund(this, 14)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+６段目<select name="timeH6" size="1" onchange="stund(this, 15)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM6" size="1" onchange="stund(this, 16)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des6" size="1" onchange="led(this, 20)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra6" size="1" onchange="led(this, 21)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type6" size="1" onchange="led(this, 22)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other6" size="1" onchange="led(this, 23)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi6" size="1" onchange="stund(this, 17)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+７段目<select name="timeH7" size="1" onchange="stund(this, 18)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+
+<select name="timeM7" size="1" onchange="stund(this, 19)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des7" size="1" onchange="led(this, 24)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra7" size="1" onchange="led(this, 25)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type7" size="1" onchange="led(this, 26)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other7" size="1" onchange="led(this, 27)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi7" size="1" onchange="stund(this, 20)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+８段目<select name="timeH8" size="1" onchange="stund(this, 21)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM8" size="1" onchange="stund(this, 22)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des8" size="1" onchange="led(this, 28)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra8" size="1" onchange="led(this, 29)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type8" size="1" onchange="led(this, 30)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other8" size="1" onchange="led(this, 31)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi8" size="1" onchange="stund(this, 23)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+９段目<select name="timeH9" size="1" onchange="stund(this, 24)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM9" size="1" onchange="stund(this, 25)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des9" size="1" onchange="led(this, 32)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra9" size="1" onchange="led(this, 33)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type9" size="1" onchange="led(this, 34)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other9" size="1" onchange="led(this, 35)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi9" size="1" onchange="stund(this, 26)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<br>
+
+10段目<select name="timeH10" size="1" onchange="stund(this, 27)" id="pic">
+<option value="time/h00">0</option>
+<option value="time/h01">1</option>
+<option value="time/h02">2</option>
+<option value="time/h03">3</option>
+<option value="time/h04">4</option>
+<option value="time/h05">5</option>
+<option value="time/h06">6</option>
+<option value="time/h07">7</option>
+<option value="time/h08">8</option>
+<option value="time/h09">9</option>
+<option value="time/h10">10</option>
+<option value="time/h11">11</option>
+<option value="time/h12">12</option>
+<option value="time/h13">13</option>
+<option value="time/h14">14</option>
+<option value="time/h15">15</option>
+<option value="time/h17">17</option>
+<option value="time/h18">18</option>
+<option value="time/h19">19</option>
+<option value="time/h20">20</option>
+<option value="time/h21">21</option>
+<option value="time/h22">22</option>
+<option value="time/h23">23</option>
+<option value="time/null2">無表示</option>
+</select>
+：
+<select name="timeM10" size="1" onchange="stund(this, 28)" id="pic">
+<option value="time/m00">00</option>
+<option value="time/m01">01</option>
+<option value="time/m02">02</option>
+<option value="time/m03">03</option>
+<option value="time/m04">04</option>
+<option value="time/m05">05</option>
+<option value="time/m06">06</option>
+<option value="time/m07">07</option>
+<option value="time/m08">08</option>
+<option value="time/m09">09</option>
+<option value="time/m10">10</option>
+<option value="time/m11">11</option>
+<option value="time/m12">12</option>
+<option value="time/m13">13</option>
+<option value="time/m14">14</option>
+<option value="time/m15">15</option>
+<option value="time/m16">16</option>
+<option value="time/m17">17</option>
+<option value="time/m18">18</option>
+<option value="time/m19">19</option>
+<option value="time/m20">20</option>
+<option value="time/m21">21</option>
+<option value="time/m22">22</option>
+<option value="time/m23">23</option>
+<option value="time/m24">24</option>
+<option value="time/m06">25</option>
+<option value="time/m26">26</option>
+<option value="time/m27">27</option>
+<option value="time/m28">28</option>
+<option value="time/m29">29</option>
+<option value="time/m30">30</option>
+<option value="time/m31">31</option>
+<option value="time/m32">32</option>
+<option value="time/m33">33</option>
+<option value="time/m34">34</option>
+<option value="time/m35">35</option>
+<option value="time/m36">36</option>
+<option value="time/m06">37</option>
+<option value="time/m38">38</option>
+<option value="time/m39">39</option>
+<option value="time/m40">40</option>
+<option value="time/m41">41</option>
+<option value="time/m42">42</option>
+<option value="time/m43">43</option>
+<option value="time/m44">44</option>
+<option value="time/m45">45</option>
+<option value="time/m46">46</option>
+<option value="time/m47">47</option>
+<option value="time/m48">48</option>
+<option value="time/m49">49</option>
+<option value="time/m50">50</option>
+<option value="time/m51">51</option>
+<option value="time/m51">52</option>
+<option value="time/m53">53</option>
+<option value="time/m54">54</option>
+<option value="time/m06">55</option>
+<option value="time/m56">56</option>
+<option value="time/m57">57</option>
+<option value="time/m58">58</option>
+<option value="time/m59">59</option>
+<option value="time/null2">無表示</option>
+</select>
+<select name="des10" size="1" onchange="led(this, 36)" id="pic">
+<option value="destination/yokohama">横浜</option>
+<option value="destination/shinagawa">品川</option>
+<option value="destination/tokyo">東京</option>
+<option value="destination/ueno">上野</option>
+<option value="destination/osaki">大崎</option>
+<option value="destination/shinjuku">新宿</option>
+<option value="destination/kagohara">籠原</option>
+<option value="destination/takasaki">高崎</option>
+<option value="destination/maebashi">前橋</option>
+<option value="destination/koga">古河</option>
+<option value="destination/koganei">小金井</option>
+<option value="destination/utsunomiya">宇都宮</option>
+<option value="destination/kuroiso">黒磯</option>
+<option value="destination/tsudanuma">津田沼</option>
+<option value="destination/chiba">千葉</option>
+<option value="destination/kimitsu">君津</option>
+<option value="destination/kazusa-ichinomiya">上総一ノ宮</option>
+<option value="destination/sakura">佐倉</option>
+<option value="destination/narita">成田</option>
+<option value="destination/narita-airport">成田空港</option>
+<option value="destination/naruto">成東</option>
+<option value="destination/airportjingu">成田空港・鹿島神宮</option>
+<option value="destination/naruto-airport">成田空港・成東</option>
+<option value="destination/null3">無表示</option>
+</select>
+
+<select name="tra10" size="1" onchange="led(this, 37)" id="pic">
+<option value="track/b01">１番線[黒背景]</option>
+<option value="track/b02">２番線[黒背景]</option>
+<option value="track/o01">１番線[橙背景]</option>
+<option value="track/o02">２番線[橙背景]</option>
+<option value="track/r02">２番線[赤背景]</option>
+<option value="track/r05">５番線[赤背景]</option>
+<option value="track/r06">６番線[赤背景]</option>
+<option value="track/g01">１番線[緑背景]</option>
+<option value="track/g02">２番線[緑背景]</option>
+<option value="track/g05">５番線[緑背景]</option>
+<option value="track/g06">６番線[緑背景]</option>
+<option value="track/g07">７番線[緑背景]</option>
+<option value="track/b05">５番線[青背景]</option>
+<option value="track/b06">６番線[青背景]</option>
+<option value="track/b07">７番線[青背景]</option>
+</select>
+
+<select name="type10" size="1" onchange="led(this, 38)" id="pic">
+<option value="type/null">無表示</option>
+<option value="type/dep">始発</option>
+<option value="type/g_s-rapid">特別快速[緑背景]</option>
+<option value="type/o_s-rapid">特別快速[橙背景]</option>
+<option value="type/ltdexp">特急</option>
+<option value="type/ltdexp-dep">特急[始発]</option>
+</select>
+
+<select name="other10" size="1" onchange="led(this, 39)" id="pic">
+<option value="other/tokaido">東海道線</option>
+<option value="other/utl">上野東京ライン</option>
+<option value="other/ssl">湘南新宿ライン</option>
+<option value="other/suka">横須賀線</option>
+<option value="other/nex-03">成田エクスプレス3号</option>
+<option value="other/nex-05">成田エクスプレス5号</option>
+<option value="other/nex-09">成田エクスプレス9号</option>
+<option value="other/nex-13">成田エクスプレス13号</option>
+<option value="other/nex-15">成田エクスプレス15号</option>
+<option value="other/nex-19">成田エクスプレス19号</option>
+<option value="other/nex-23">成田エクスプレス23号</option>
+<option value="other/nex-27">成田エクスプレス27号</option>
+<option value="other/nex-35">成田エクスプレス35号</option>
+<option value="other/nex-39">成田エクスプレス39号</option>
+<option value="other/nex-43">成田エクスプレス43号</option>
+<option value="other/nex-51">成田エクスプレス51号</option>
+<option value="other/odoriko-10">踊り子10号</option>
+<option value="other/odoriko-16">踊り子16号</option>
+<option value="other/sliner-02">湘南ライナー2号</option>
+<option value="other/sliner-12">湘南ライナー12号</option>
+<option value="other/null5">無表示</option>
+</select>
+
+<select name="hensachi10" size="1" onchange="stund(this, 29)" id="pic">
+<option value="hensachi/o_spps">東海道線　　　　　◯――◯（横浜行）</option>
+<option value="hensachi/o_sppspss">東海道線　　　　　◯――◯―◯◯（品川行）</option>
+<option value="hensachi/o_sppspssss">東海道線　　　　　◯――◯―◯◯◯◯（東京行）</option>
+<option value="hensachi/o_sppspsssss">東海道線　　　　　◯――◯―◯◯◯◯◯（直通）</option>
+<option value="hensachi/o_sppsspppppns">東海道線　　　　　◯――◯◯―――――　◯（高崎線系統大崎行）</option>
+<option value="hensachi/g_ssssspppppnssss">湘南新宿ライン　　◯◯◯◯◯―――――　◯◯◯◯（普通）</option>
+<option value="hensachi/g_sppsspppppnssss">湘南新宿ライン　　◯――◯◯―――――　◯◯◯◯（快速）</option>
+<option value="hensachi/g_sppsspppppnspss">湘南新宿ライン　　◯――◯◯―――――　◯―◯◯（特別快速）</option>
+<option value="hensachi/b_ssss">横須賀線　　　　　◯◯◯◯（横浜行）</option>
+<option value="hensachi/b_sssssps">横須賀線　　　　　◯◯◯◯◯―◯（品川行）</option>
+<option value="hensachi/b_ssssspsss">横須賀線　　　　　◯◯◯◯◯―◯◯◯</option>
+<option value="hensachi/b_ssssspppppns">横須賀線　　　　　◯◯◯◯◯―――――　◯（宇都宮線系統大崎行）</option>
+<option value="hensachi/r_pppspssps">踊り子　　　　　　―――◯―◯◯―◯</option>
+<option value="hensachi/r_pppspsspsp">踊り子　　　　　　―――◯―◯◯―◯―（我孫子行）</option>
+<option value="hensachi/r_sppsspsps">成田エクスプレス　◯――◯◯―◯―◯</option>
+<option value="hensachi/r_pppsspspsp">草津　　　　　　　―――◯◯―◯―◯―</option>
+<option value="hensachi/w_ppppppsps">湘南ライナー　　　――――――◯―◯</option>
+<option value="hensachi/o_pppsppppppnpppp">臨時　　　　　　　―――◯◯―◯―◯（臨時快速青梅行）</option>
+<option value="hensachi/null15">無表示</option>
+</select>
+<hr>
+</div>
+<div id="autoarea" style="display: inline;">
+実際の発車時刻(時分秒)をもとに表示していますが、分単位で同時発車の列車については実際と表示順序が異なる場合があります。<hr>
+モード選択：<select id="whithtab" size="1" onchange="autotab()"><option value="tabletab" selected="">列車詳細情報表示画面</option><option value="lcdtab">大宮駅先着列車案内LCD画面</option></select>
+発車1分前通知機能：<select id="pushtab" size="1" onchange="push()"><option value="on">ON</option><option value="off" selected="">OFF</option></select><span style="font-size: 16px;">　発車1分前通知機能についての詳細は<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#notitsuite">こちら</a>をご覧ください。
+<div id="tablearea" style="display: inline;">
+<h3>現在表示中の列車（上位５本のみ）</h3>
+<table border="1">
+<tbody><tr align="center">
+<td>列車番号</td>
+<td>路 線 名</td>
+<td>列車名・直通先</td>
+<td>発車時刻</td>
+<td>種　別</td>
+<td>両数</td>
+<td>行　先</td>
+<td>のりば</td>
+<td>停車駅パターン</td>
+</tr>
+<tr>
+<td><p id="row1trainnum">1682S</p></td>
+<td><p id="row1routekey">横須賀線</p></td>
+<td><p id="row1contentkey"></p></td>
+<td align="center"><p id="row1timekey">16：58</p></td>
+<td align="center"><p id="row1typekey">普通</p></td>
+<td><p id="row1carskey">15両</p></td>
+<td align="center"><p id="row1destination">成田空港</p></td>
+<td><p id="row1trackkey">5番線</p></td>
+<td><p id="row1patternkey">横須賀線</p></td>
+</tr>
+<tr>
+<td><p id="row2trainnum">3534E</p></td>
+<td><p id="row2routekey">上野東京ライン</p></td>
+<td><p id="row2contentkey">宇都宮線直通</p></td>
+<td align="center"><p id="row2timekey">17：00</p></td>
+<td align="center"><p id="row2typekey">快速アクティー</p></td>
+<td><p id="row2carskey">15両</p></td>
+<td align="center"><p id="row2destination">宇都宮</p></td>
+<td><p id="row2trackkey">2番線</p></td>
+<td><p id="row2patternkey">上野東京ライン</p></td>
+</tr>
+<tr>
+<td><p id="row3trainnum">2846Y</p></td>
+<td><p id="row3routekey">湘南新宿ライン</p></td>
+<td><p id="row3contentkey">高崎線直通</p></td>
+<td align="center"><p id="row3timekey">17：03</p></td>
+<td align="center"><p id="row3typekey">快速</p></td>
+<td><p id="row3carskey">15両</p></td>
+<td align="center"><p id="row3destination">籠　原</p></td>
+<td><p id="row3trackkey">2番線</p></td>
+<td><p id="row3patternkey">湘南新宿ライン-快速</p></td>
+</tr>
+<tr>
+<td><p id="row4trainnum">1626E</p></td>
+<td><p id="row4routekey">上野東京ライン</p></td>
+<td><p id="row4contentkey">宇都宮線直通</p></td>
+<td align="center"><p id="row4timekey">17：06</p></td>
+<td align="center"><p id="row4typekey">普通</p></td>
+<td><p id="row4carskey">15両</p></td>
+<td align="center"><p id="row4destination">小金井</p></td>
+<td><p id="row4trackkey">2番線</p></td>
+<td><p id="row4patternkey">上野東京ライン</p></td>
+</tr>
+<tr>
+<td><p id="row5trainnum">1602S</p></td>
+<td><p id="row5routekey">横須賀線</p></td>
+<td><p id="row5contentkey"></p></td>
+<td align="center"><p id="row5timekey">17：07</p></td>
+<td align="center"><p id="row5typekey">普通</p></td>
+<td><p id="row5carskey">15両</p></td>
+<td align="center"><p id="row5destination">上総一ノ宮</p></td>
+<td><p id="row5trackkey">5番線</p></td>
+<td><p id="row5patternkey">横須賀線</p></td>
+</tr>
+</tbody></table>
+</div>
+<div id="lcdarea" style="display: none;">
+<h3>大宮駅先着列車</h3>
+<div style="width:960px; height:540px; display: block; background-color: #333333;">
+<div style="width:804px; height:454px; margin-left:78px; margin-top:43px; display: block; position: absolute; background-color: rgb(25, 25, 25);">
+<div style="width:800px; height:450px; margin-left:2px; margin-top:2px; display: block; position: absolute;" id="lcdwrite">
+<img style="position: absolute; margin-left: 0px; margin-top: 0px; width:800px; height:450px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/lcdbase_jp1.png" name="">
+<img style="position: absolute; margin-left: 109.5px; margin-top: 110px; width:122px; height:80px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/lcd/utl_jp1.png" name="sh101">
+<img style="position: absolute; margin-left: 250px; margin-top: 112px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/1.png" name="sh102">
+<img style="position: absolute; margin-left: 284px; margin-top: 112px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/7.png" name="sh103">
+<img style="position: absolute; margin-left: 318px; margin-top: 112px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/coron.png" name="sh104">
+<img style="position: absolute; margin-left: 352px; margin-top: 112px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/0.png" name="sh105">
+<img style="position: absolute; margin-left: 386px; margin-top: 112px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/0.png" name="sh106">
+<img style="position: absolute; margin-left: 462px; margin-top: 106px; width:172.5px; height:54px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/lcd/utsunomiya_jp1.png" name="sh107">
+<img style="position: absolute; margin-left: 642px; margin-top: 206px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/1.png" name="sh109">
+<img style="position: absolute; margin-left: 665px; margin-top: 206px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/8.png" name="sh110">
+<img style="position: absolute; margin-left: 688px; margin-top: 206px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/coron.png" name="sh111">
+<img style="position: absolute; margin-left: 711px; margin-top: 206px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/1.png" name="sh112">
+<img style="position: absolute; margin-left: 734px; margin-top: 206px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/9.png" name="sh113">
+<img style="position: absolute; margin-left: 109.5px; margin-top: 200px; width:122px; height:41.5px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/lcd/rapid_jp1.png" name="sh114">
+<img style="position: absolute; margin-left: 732px; margin-top: 106px; width:54px; height:54px;" alt="" src="./jgtrgrtsgres_files/02.png" name="sh115">
+
+<img style="position: absolute; margin-left: 109.5px; margin-top: 269px; width:122px; height:80px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/lcd/ssl_jp1.png" name="sh201">
+<img style="position: absolute; margin-left: 250px; margin-top: 271px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/1.png" name="sh202">
+<img style="position: absolute; margin-left: 284px; margin-top: 271px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/7.png" name="sh203">
+<img style="position: absolute; margin-left: 318px; margin-top: 271px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/coron.png" name="sh204">
+<img style="position: absolute; margin-left: 352px; margin-top: 271px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/0.png" name="sh205">
+<img style="position: absolute; margin-left: 386px; margin-top: 271px; width:30.3px; height:42px;" alt="" src="./jgtrgrtsgres_files/3.png" name="sh206">
+<img style="position: absolute; margin-left: 462px; margin-top: 265px; width:172.5px; height:54px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/lcd/kagohara_jp1.png" name="sh207">
+<img style="position: absolute; margin-left: 642px; margin-top: 364px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/1.png" name="sh209">
+<img style="position: absolute; margin-left: 665px; margin-top: 364px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/8.png" name="sh210">
+<img style="position: absolute; margin-left: 688px; margin-top: 364px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/coron.png" name="sh211">
+<img style="position: absolute; margin-left: 711px; margin-top: 364px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/2.png" name="sh212">
+<img style="position: absolute; margin-left: 734px; margin-top: 364px; width:21.8px; height:31px;" alt="" src="./jgtrgrtsgres_files/1.png" name="sh213">
+<img style="position: absolute; margin-left: 109.5px; margin-top: 359px; width:122px; height:41.5px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/lcd/rapid_jp1.png" name="sh214">
+<img style="position: absolute; margin-left: 732px; margin-top: 265px; width:54px; height:54px;" alt="" src="./jgtrgrtsgres_files/02.png" name="sh215">
+<img style="position: absolute; margin-left: 0px; margin-top: 0px; width:800px; height:450px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/null_jp1.png" name="sh001">
+<img style="position: absolute; margin-left: 0px; margin-top: 0px; width:800px; height:450px;" alt="" src="https://udonsimulator.web.fc2.com/simulator/ofuna/null_jp1.png" name="sh002">
+</div>
+</div>
+</div>
+</div>
+</span></div>
+<hr>
+<!-- 大船駅環境音再生関連ここから -->
+<audio id="bgm1" preload="" loop="">
+  <source src="o-funa_EnvironmentalSound.mp3" type="audio/mp3">
+</audio>
+<script>
+  const bgm1 = document.querySelector("#bgm1");       // <audio>
+  const btn  = document.querySelector("#btn-play");   // <button>
+  btn.addEventListener("click", ()=>{
+    // pausedがtrue=>停止, false=>再生中
+    if( ! bgm1.paused ){
+      bgm1.pause();
+    }
+    else{
+      bgm1.play();
+    }
+  });
+   bgm1.addEventListener("ended", ()=>{
+    bgm1.currentTime = 0;  // 再生位置を先頭に移動
+  });
+</script>
+<!-- 大船駅環境音再生関連ここまで -->
+<!-- 通知音関連ここから -->
+<audio id="chime">
+  <source src="audio/chime.mp3" type="audio/mp3">
+</audio>
+<audio id="chime2">
+  <source src="audio/chimeltd.mp3" type="audio/mp3">
+</audio>
+<!-- 通知音関連ここまで -->
+<h2 id="moku01">このシミュレーターについて</h2>
+<div align="right" style="position:absolute; width:1200px;">
+	<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku0">▲上へ</a><br><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku02">▼下へ</a>
+</div>
+<div id="unitbrock">
+<div id="rightimage">
+<img style="width:450px;" src="./jgtrgrtsgres_files/img001.jpg"><br>
+大船駅南改札　発車標<br>
+<img style="width:450px;" src="./jgtrgrtsgres_files/img002.jpg"><br>
+大船駅北改札　発車標
+</div>
+このシミュレーターはJR東日本大船駅北・南改札に設置されている31桁10段の巨大発車標を再現したものです。<br>
+実際の時刻表データに基づくリアルタイム表示のほかに各ドロップダウンリストから表示を自由に選択できる手動表示が可能となっています。また、手動表示モードでは「ランダムに表示する」ボタン押下により各表示の出現率を実際と近づけた設定でランダムに表示を変更することができます。<br>
+その他、駅構内の雰囲気を可能な限り演出するべく大船駅における実際の環境音を再生できるボタンやリアルタイム表示における発車直前通知機能など、様々な機能を盛り込んだ大作(?)となっています。
+</div>
+<h3>利用上の注意</h3>
+<div id="unitbrock">
+このシミュレータはリアルタイム列車情報表示に対応していますが、実際の運行状況とは一切連動していません。そのため突発的な遅れや運休、行先変更、東海道線の横須賀線への経路変更などには一切対応していません。大船駅から電車をご利用の際は当シミュレータに優先して実際の運行情報および実物の発車標をもとに行動することを強くお勧めします。このシミュレータの情報をもとに行動した結果発生した損害などには一切責任を持ちませんので予めご了承ください。
+</div>
+<h3>PWAに対応しました。</h3>
+<div id="unitbrock">
+このシミュレーターはPWA(Progressive Web Apps)に対応しています。スマートフォン(Android)は「ホーム画面に追加」から、PCはアドレスバー右側の「インストール」からそれぞれ導入することでデスクトップやアプリ一覧からネイティブアプリと同じように起動することができます。
+
+<br style="clear:both;">
+</div>
+<h2 id="moku02">細かい仕様について</h2>
+<div align="right" style="position:absolute; width:1200px;">
+	<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku01">▲上へ</a><br><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku03">▼下へ</a>
+</div>
+<h3>発車標本体の挙動</h3>
+<div id="unitbrock">
+発車標の日英切り替え間隔については現地で実測のうえ以下の挙動を設定しており、変更はできません。<br>
+実物と同様、「日本語①(6.0秒)→日本語②(6.0秒)→英語①(3.0秒)→英語②(3.0秒)」のサイクルで動作します。<br>
+<iframe width="560" height="315" src="./jgtrgrtsgres_files/OZkkTLCjZZ8.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><br>
+<strike>現地で撮影した写真はこちらをご覧ください。</strike>
+</div>
+<h3>ランダム表示ボタンについて</h3>
+<div id="unitbrock">
+このシミュレーターは手動列車選択モードにおいて可能な限り実際の表示と同じような割合でランダムに表示することができるボタンを設置しています。<br>
+<h4>◇ランダム設定における列車間隔について◇</h4>
+ランダム設定時は時間帯によって列車の間隔を同発～12分間隔の幅で調整しています。時間帯別の詳細は下表を参照ください。
+<table border="1">
+<tbody><tr>
+<td>設定時間帯</td>
+<td>設定列車間隔</td>
+</tr>
+<tr>
+<td>５時台</td>
+<td>０～１１分間隔</td>
+</tr>
+<tr>
+<td>６時台</td>
+<td>０～７分間隔</td>
+</tr>
+<tr>
+<td>７時～８時台</td>
+<td>０～３分間隔</td>
+</tr>
+<tr>
+<td>９時～２０時台</td>
+<td>０～７分間隔</td>
+</tr>
+<tr>
+<td>２１時～翌４時台</td>
+<td>０～１１分間隔</td>
+</tr>
+</tbody></table><br>
+<h4>◇ランダム設定における表示について◇</h4>
+列車の運行形態とシミュレーター上での表示が一致するように調整し、可能な限り矛盾が生じないようにしています。（例：宇都宮線系統の湘南新宿ラインは全列車普通,特別快速は全列車2番発　など）<br>
+各行先および種別は実際の表示割合に近づけた排出率を設定しており、線区・種別に応じた行先・停車駅パターン表示を計算して表示しています。また、同じ路線色が3本以上重ならないように調整しています。<br>
+</div>
+<h3>キーボード入力について</h3>
+<div id="unitbrock">
+このシミュレータでは一部の機能をPCのキーボード入力によって操作することが可能です。詳細については下表をご覧ください。
+<table border="1">
+<tbody><tr>
+<td>操作名</td>
+<td>入力文字</td>
+<td>備考</td>
+</tr>
+<tr>
+<td>下0段消灯</td>
+<td>テンキーの"0"</td>
+<td>全段完全表示</td>
+</tr>
+<tr>
+<td>下1段消灯</td>
+<td>テンキーの"1"</td>
+<td rowspan="11">解除時は「下0段消灯」(テンキーの"0")を押下</td>
+</tr>
+<tr>
+<td>下2段消灯</td>
+<td>テンキーの"2"</td>
+</tr>
+<tr>
+<td>下3段消灯</td>
+<td>テンキーの"3"</td>
+</tr>
+<tr>
+<td>下4段消灯</td>
+<td>テンキーの"4"</td>
+</tr>
+<tr>
+<td>下5段消灯</td>
+<td>テンキーの"5"</td>
+</tr>
+<tr>
+<td>下6段消灯</td>
+<td>テンキーの"6"</td>
+</tr>
+<tr>
+<td>下7段消灯</td>
+<td>テンキーの"7"</td>
+</tr>
+<tr>
+<td>下8段消灯</td>
+<td>テンキーの"8"</td>
+</tr>
+<tr>
+<td>下9段消灯</td>
+<td>テンキーの"9"</td>
+</tr>
+<tr>
+<td>全段消灯</td>
+<td>"delete"キー</td>
+</tr>
+<tr>
+<td>調整中表示</td>
+<td>"insert"キー</td>
+</tr>
+<tr>
+<td>自動/手動切替</td>
+<td>"A"キー</td>
+<td></td>
+</tr>
+<tr>
+<td>ランダム表示</td>
+<td>"R"キー</td>
+<td>手動セット時に有効。</td>
+</tr>
+<tr>
+<td>列車詳細情報画面⇔大宮駅先着列車画面切替</td>
+<td>"T"キー</td>
+<td rowspan="2">自動セット時のみ有効。</td>
+</tr>
+<tr>
+<td>発車1分前通知機能ON/OFF切替</td>
+<td>"F"キー</td>
+</tr>
+</tbody></table>
+</div>
+<h2 id="moku03">自動列車セット機能について</h2>
+<div align="right" style="position:absolute; width:1200px;">
+	<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku02">▲上へ</a><br><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku04">▼下へ</a>
+</div>
+<div id="unitbrock">
+実際の大船駅の時刻表に基づき列車を表示させるプログラムです。つまり、<strong>大船駅のコピーそのもの。</strong>詳しい仕様等については下記の　をご覧ください。現在は8つのデータを収録しています。今後のダイヤ改正や運転変更に合わせ更新を継続していきたいと考えています。<br>
+収録ダイヤ：<ul>
+<li>2020年3月改正平日・土休日ダイヤ(臨時列車運転に応じた6パターン)</li>
+<li>2020年5月1日実施　新型コロナウイルス感染症拡大に伴う特急列車減便ダイヤ(成田エクスプレスの大幅減便)</li>
+</ul>
+時刻表セットのための休日判定には、osamutake氏作成のjapanese-holidays-jsを使用しています。このライブラリの詳細は<a href="https://github.com/osamutake/japanese-holidays-js" target="blank">こちら</a>をご覧下さい。
+</div>
+<h3>大宮駅先着列車表示LCD画面(再現)について</h3>
+<div id="rightimage">
+<img style="width:450px;" src="./jgtrgrtsgres_files/img003.jpg"><br>
+横浜駅にあるディスプレイ(中央北改札)<br>
+</div>
+<div id="unitbrock">
+このシミュレータでは大船駅に実際には存在しないものの、横浜駅に設置されている大宮駅先着列車を表示するディスプレイと同じものを再現しています。こちらも時刻表データに組み込んである大宮駅到着予定時刻をもとに到着順に列車を表示するものとなっています。
+</div>
+<br style="clear:both;">
+<h3 id="notitsuite">発車1分前通知機能について</h3>
+<div id="unitbrock">
+この機能をオンにすると発車標の最上位にある列車の発車時刻1分前(50~100秒前)になった際に4点チャイム(特急列車は別音源)とともにポップアップウィンドウで該当列車の
+<ul>
+<li>のりば</li>
+<li>路線名</li>
+<li>直通先/列車名</li>
+<li>種別</li>
+<li>行先</li>
+<li>両数</li>
+</ul>
+を通知します。端末の時刻がズレていない限り大船駅北・南改札どちらからも通知が発出されてから移動を開始し、最上位の列車に乗車することが理論上は可能となっています。<strong>ただし、あくまで理論上の話ですのでこの通知機能はあくまで参考程度に活用していただき、<span style="color:red;">のりばには<u>余裕を持った時間に到着することを強く推奨</u>します。</span>この機能を利用したことによる<span style="color:red;"><u>乗り遅れなどに対する責任は一切負いません</u></span>のでご了承ください。</strong><br>※iOS端末では通知音が正常に再生されない事象が報告されています。<br><br>
+なお、公開に先立ち2020年10月14日の1594E(2番線14:31発), 2544Y(5番線14:45発), 1644E(2番線20:04発)において「北改札において通知発出を確認してから通常の速度で歩き、駆け込まずに乗車が可能であるか」を実証したところ、通知発出の確認から乗車に成功した確率はかなり低めでした。現地で撮影した動画はこちらをご覧ください。<br><br>
+・通知発出タイミング試験　2544Y<br>
+<iframe width="560" height="315" src="./jgtrgrtsgres_files/ZEaxB7I0V8I.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><br><br>
+・通知発出タイミング試験　1644E<br>
+<iframe width="560" height="315" src="./jgtrgrtsgres_files/-Xps8trxShk.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+<h3>シミュレータの動作制御について(開発者向け)</h3>
+<div id="unitbrock">
+<!--このシミュレータの細かい制御方法についてです。<a href="algorithm/index.htm" target="_blank">別タブで開きます。</a>-->
+準　備　中
+</div>
+
+
+
+<div class="accbox">
+  <!--ラベル1-->
+    <label for="label1"><h4>大船シミュ開発日誌的な記録帳（クリックで開く, 超長文注意）</h4></label>
+    <input type="checkbox" id="label1" class="cssacc">
+    <div class="accshow">
+<div id="unitbrock">
+<div style="height:800px; overflow-y:scroll;">
+<h4>2020年5月8日</h4>
+およそ3ヶ月ぶりに大船に行き、改めて巨大な発車標に感銘を受ける。
+<h4>5月9日</h4>
+Shonan.Exp氏より北改札の筐体素材を頂いたので撮りためていた写真からLEDを再現したものと組み合わせてgifアニメーションを作成。思いのほか気に入ってしまったのでそのままノリでシミュレータ化しちゃうことに。
+<h4>5月10日</h4>
+初期パーツによる最初期のシミュレータが完成。10段すべてが初期設定の17:00発東海道線横浜行きという味気ないものであったが作った当人は大満足。だが、やっぱり大船といえばあの混沌さがメインなのでそれを実現することが最終目標となる。<br>
+まずは時刻表通りに表示させる機能を付けよう！というド素人にしては夢を高く高く設定し、奮闘するもなかなか思い通りにいかない。そもそも表示が変わらない。
+<h4>5月10日～21日</h4>
+思い立っては挫折を繰り返し徐々に創作意欲が落ちていく。
+<h4>5月22日</h4>
+誕生日なので大船に行く。(←？？？？)改めて実物を目の前にして「やっぱりこれを作りたい！」と奮起。資料をたくさん撮る。
+<h4>5月23日～</h4>
+再び自動時刻セット機能と奮闘。撃沈。また創作意欲は下り坂。
+<h4>7月4日</h4>
+日が空いたなおい。忙しかったんです。またShonan.Exp氏より今度は大船駅の環境音素材を頂く。早速実装。より大船感が増す。
+<h4>8月6日</h4>
+また日が空きました。自身で手掛けるほかのシミュレータから着想を得て「ランダム機能ならいけそう」と思い立ち、1か月ぶりにプログラム本体に手を付ける。<br><br>
+<img src="./jgtrgrtsgres_files/0806-1.png"><br>
+で、できたのがこれ(上画像)。1段目の行先だけまずはランダムで変えられるようにしてみたら意外とイイ。やる気が出てくる。<br><br>
+<img src="./jgtrgrtsgres_files/0806-2.png"><br>
+そのままのノリで現在時刻＋数分の値を算出できるようになった。この時点で<strong>「時間帯によって列車間隔を変える機能」</strong>も同時実装した。そして勢いで全段をランダムでいじれるようにするなどと。<br><br>
+<img src="./jgtrgrtsgres_files/0806-3.png"><br>
+そのまま夜まで奮闘して全段実装。<strong>n時部分の繰り上がり実装や日付変更(0時)に対応</strong>させるのは非常に苦労した。けどできた。カラフルだけど表示ごとに実際の形態に対応してないのでむやみやたらに表示されている状態。<br>
+<strong>こんなの大船じゃない！！！！</strong>というわけで今後の課題は「ただしいおおふなのつくりかた(仮)」となった。
+<h4>8月7・8日</h4>
+課題を設定したものの発想に至らず。朝ラッシュ時の列車間隔だけ見てｷｬｯｷｬしてるだけ。
+<h4>8月9日</h4>
+のりばパーツの表示状態を参照して他の各表示を表示する手法を思いつき実行してみる。<br><br>
+<img src="./jgtrgrtsgres_files/0809.gif"><br>
+すると今までの乱雑な大船に比べてかなりスッキリと、そしてかなり実物に近づいた大船に。ただ、このままでは「上野東京ライン品川行(停車駅パターン:東海道線横浜行)」のように表示内で矛盾が生じてしまう。「はんぶんただしいおおふな」が完成した今、次の課題は「いかに運行形態と表示を合わせるか」となる。<br>
+なお、この構文変更で「各パーツの排出率」という概念が誕生したのでレアな表示はシミュレーター上でもレアにしてみるなどと。<br><br>
+<img src="./jgtrgrtsgres_files/0809-2.png"><img src="./jgtrgrtsgres_files/0809-3.png"><br>
+余計な機能かもしれないが、実物に即したものにするために<strong>「調整中表示」</strong>と<strong>「下n段が消える機能」</strong>を実装。また、<strong>キーボード入力に対応させる。</strong>
+<h4>8月10日</h4>
+<img src="./jgtrgrtsgres_files/0810.gif"><br>
+<strong>☆　大　船　ル　ー　レ　ッ　ト　☆</strong><br>
+くっだらない。
+<h4>8月11日</h4>
+排出率の全段実装を終える。
+<h4>8月12日</h4>
+のりば＋行先パーツの組み合わせを参照する方法を思いついたので早速実践。意外なことに一発で思い通りの挙動をしてくれたので1段目だけだけど実装してみる。<br><br>
+<img src="./jgtrgrtsgres_files/0812.gif"><br>
+これで<strong>シミュレータ内の表示が実際の運行形態と完全一致した状態</strong>となった。これはもう100%大船そのものである。手元で動く大船を創造してしまったのである。や っ た ね✌
+<h4>8月13日</h4>
+<img src="./jgtrgrtsgres_files/oldview.png"><br>
+これまでの状態だと場合によっては上画像のように極端なまでに偏って表示されることがあり、実態にそぐわない一面があった。<br><br>
+<img src="./jgtrgrtsgres_files/newview.png"><br>
+というわけで同じ色が3段以上重ならないように処理することに。これで、これこそが大船そのものの姿に最も近い完成形なのではないだろうか。というわけで紆余曲折を経てv0.00完成。
+<h4>9月2日</h4>
+間が空いた。かなり空いた。この間に少しずつ当初からの最終目標である自動列車セット機能の試行錯誤を繰り返していた。そして今日。出先でいきなりいい案が降ってきたので急いで帰宅して6時間かけて構築。最低限の機能(時刻データ参照, 自動進段)を実装できたのでv0.1beta完成。
+<h4>9月5日</h4>
+朝から晩までフルで作業してようやくコロナ減便ダイヤの実装を終える。
+<h4>9月8日・9日</h4>
+大船を超える存在を目指して大宮駅先着列車表示ディスプレイの実装に取り掛かる。そして枠組みが完成したところでv0.2betaに移行。
+<h4>9月27日</h4>
+しばらく手を付けていなかったが1日がかりで平日通常ダイヤを実装。
+<h4>9月29日</h4>
+かねてからの夢であったPWAに対応させるなどと。ホーム画面に常駐するJT07かっこいいよね？？
+<h4>9月30日</h4>
+発車前に通知飛ばせば発車標に見とれていても電車に乗り遅れなくて済むのでは？？と思い発車1分前に通知する機能を実装。
+<h4>10月7日</h4>
+細かい調整を続けながら目立った進捗がないのでモチベを高めるために1ヶ月半ぶりに大船へ行く。あまりにも手元の大船がとっても大船しているので実物を見たときに前ほど感動しなかったのが軽くショック。そして行先の誤植を現地で見つける。
+<h4>10月14日</h4>
+モチベを上げておきながらほぼ何もしてなかったのでまぁまた大船行くんですよ。とりあえず通知機能のテスト（発車1分前通知発出から電車に間に合うのか）をしてみたが結果は乗れず。無能か。踊り子8号を踊り子10号で登録していました。なおしました。
+<h4>10月17日</h4>
+3週間ぶりに一日中家にいたのでダイヤデータの軽量化を完成させてようやく休日ダイヤの実装に移る。公開まであと2週間。
+<h4>10月21日</h4>
+3週連続でまたまた大船に行きました。到着と同時に鶴見新子安間踏切安全確認に伴う遅れが徐々に波及してきていたのでお家芸「時空転移再出現」「唐突の運転変更」をじっくり堪能しましたよっと。そしてブチ上げたモチベで休日減便ダイヤを実装。
+<h4>10月24日</h4>
+ホリデー快速の取材のためにまたきた。月間通算4度目。
+<h4>10月28日</h4>
+追加取材のためにまたきた。移住しろ？
+<h4>10月29日</h4>
+またまた追加取材。ちょうど高崎線不通に伴う直通打ち切りにより上野東京ライン東京行きが誕生したので追加素材として収集。
+</div>
+</div>
+</div>
+
+</div>
+<h2 id="moku04">パーツ集</h2>
+<div align="right" style="position:absolute; width:1200px;">
+	<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku03">▲上へ</a><br><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku05">▼下へ</a>
+</div>
+<div id="unitbrock">
+現時点でのパーツ集です。まだまだ増える…かもしれません。
+<div style="width:1000px; height:600px; overflow-x:scroll; overflow-y:scroll;">
+<img src="./jgtrgrtsgres_files/boh-funa.png">
+</div>
+</div>
+<h2 id="moku05">製作協力-Special Thanks-</h2>
+<div align="right" style="position:absolute; width:1200px;">
+	<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku04">▲上へ</a><br><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku06">▼下へ</a>
+</div>
+<div id="unitbrock">
+大船駅発車標シミュレータを製作するにあたり様々なご協力を頂きました。ありがとうございました。
+<dl>
+<dt>Shonan.Exp様(@ShonanExpress1)</dt>
+<dd>筐体画像や環境音ファイル、素材写真の提供を頂きました。また、iOSにおける動作確認のお手伝いをしていただきました。さらに、各種測定のお手伝いおよび資料提供、現地の案内までもをしていただきました。本当にありがとうございました。</dd>
+</dl>
+<dl>
+<dt>上京特快様(@jokyo_sp_rapid)</dt>
+<dd>プログラム本体における助言を数多く頂きました。本当にありがとうございました。</dd>
+</dl>
+<dl>
+<dt>たつたあげ様(@tatsuage_LED)</dt>
+<dd>無理をお願いして11/7運転のホリデー快速あたみにおける発車標の挙動を調査していただきました。ありがとうございました。</dd>
+</dl>
+その他、シミュの公開を心待ちにしてくださっていた方々などたくさんの方々の協力がありました。ありがとうございました。
+</div>
+<h2 id="moku06">更新履歴</h2>
+<div align="right" style="position:absolute; width:1200px;">
+	<a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#moku05">▲上へ</a><br><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#head">ページトップへ</a>
+</div>
+<div id="unitbrock">
+・2020.08.13　Ver.0.00完成<br>
+・2020.09.02　Ver.0.1betaに移行(自動列車選別機能の仮追加)<br>
+・2020.09.09　Ver.0.2betaに移行(大宮駅先着列車表示機能の仮追加)<br>
+・2020.09.28　Ver.0.3に移行(大宮駅先着列車表示機能の完成)<br>
+・2020.09.29　Ver.0.3.2（PWA対応[0.3.1], 通知機能実装[0.3.2]）<br>
+・2020.09.30　Ver.0.3.3（通知音実装）<br>
+・2020.10.01　Ver.0.3.4（軽微な修正・キーボード操作拡充・iPhoneにおけるPWA正式対応）<br>
+・2020.10.16　Ver.0.3.7（行先誤植の修正・筐体裏返し機能の実装・ダイヤ判定軽量化）<br>
+・2020.10.21　Ver.0.3.10（軽微な修正・休日減便ダイヤ実装）<br>
+・2020.10.22　Ver.0.3.12（緊急の修正）<br>
+・2020.10.24　Ver.0.3.13（時計用LED部分の色味を実物と同じ白色LEDふうに調整）<br>
+・2020.10.28　Ver.0.3.17（ダイヤ追加・プログラム微修正・各種調整）<br>
+・2020.11.01　Ver.1.0.0 本公開開始！<br>
+・2020.11.08　Ver.1.1.0 （任意の現在時刻を設定する機能を実装）<br>
+・2020.11.21　Ver.1.1.1 （ダイヤ2種追加）<br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div id="unitbrock" align="center">
+<br>
+Version 1.1.1.14
+</div>
+
+</div>
+
+
+<div id="page_top"><a href="javascript:void(0)" rel="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#head"></a></div>
+
+<div id="sns_share">
+<div id="share_box">
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 97px; height: 28px;" title="Twitter Tweet Button" src="./jgtrgrtsgres_files/tweet_button.21f942bb866c2823339b839747a0c50c.ja.html" data-url="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm"></iframe><script async="" src="./jgtrgrtsgres_files/widgets.js" charset="utf-8"></script>
+<!--
+<div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" data-url="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm" data-color="default" data-size="large" data-count="true" style="display: none;"></div>
+ <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+ -->
+</div>
+</div>
+
+<div class="modal-wrapper" id="JR-info">
+    <a href="https://udonsimulator.web.fc2.com/simulator/ofuna/index.htm#!" class="modal-overlay"></a>
+    <div class="modal-window">
+    <div class="modal-content">
+    <iframe width="1000px" height="750px" style="overflow-x:scroll; overflow-y:scroll;" src="./jgtrgrtsgres_files/saved_resource.html">
+    <a href ="#!" class="modal-close">閉じる</a>
+    </div>
+    </div>
+  </div>
+<script type="text/javascript"><!--
+var fc2footerparam = 'charset=' + encodeURIComponent(document.charset ? document.charset : document.characterSet) + '&url=' + encodeURIComponent(document.location) + '&service=0&r=' + Math.floor(Math.random()*99999999999);
+var fc2footertag = '<' + 'script src="//vip.chps-api.fc2.com/apis/footer/?' + fc2footerparam + '" charset="UTF-8"><' + '/script>';
+document.write(fc2footertag);
+//--></script>
+<!-- FC2, inc.-->
+<img src="//media.fc2.com/counter_img.php?id=50" style="visibility:hidden" alt="inserted by FC2 system" width="0" height="0">
+<!-- FC2, inc.-->
+</body>
+</html></iframe></div></div></div></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./jgtrgrtsgres_files/widget_iframe.21f942bb866c2823339b839747a0c50c.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./jgtrgrtsgres_files/saved_resource(1).html"></iframe></body></html>
